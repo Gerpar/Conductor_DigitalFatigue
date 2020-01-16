@@ -93,7 +93,7 @@ public class PlayerMove : MonoBehaviour
 		//adjust movement values if we're in the air or on the ground
 		curAccel = (grounded) ? accel : airAccel;
 		curDecel = (grounded) ? decel : airDecel;
-		curRotateSpeed = (grounded) ? rotateSpeed : airRotateSpeed;
+		//curRotateSpeed = (grounded) ? rotateSpeed : airRotateSpeed;
 				
 		//get movement axis relative to camera
 		screenMovementSpace = Quaternion.Euler (0, mainCam.eulerAngles.y, 0);
