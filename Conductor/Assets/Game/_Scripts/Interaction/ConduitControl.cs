@@ -18,6 +18,8 @@ public class ConduitControl : MonoBehaviour
                 obj.AddComponent<ObjectEffect>();   // Add a standard component
             }
         }
+
+        UpdateObjects();
     }
 
     // Turns on the conduit
