@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1492538997799349217}
   - component: {fileID: 7885637125753620322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,8 @@ GameObject:
   - component: {fileID: 2887317920515250613}
   - component: {fileID: 2887317920515250610}
   - component: {fileID: -6970647630148627070}
-  m_Layer: 0
+  - component: {fileID: -2871017789007076009}
+  m_Layer: 8
   m_Name: EnergySphere_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +229,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2887317920515250608}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -276,6 +277,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a61d3fce4a42d844adaf7526f202589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2871017789007076009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2887317920515250608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b17223ef7a310514a8c09a9d9d5b57fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6894315447504323970
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,7 +299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7845543290197023248}
   - component: {fileID: 2378024248082458115}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
