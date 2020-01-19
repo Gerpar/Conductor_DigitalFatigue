@@ -5,6 +5,7 @@ using UnityEngine;
 public class ConduitControl : MonoBehaviour
 {
     [SerializeField] GameObject[] effectedObjects;
+    [SerializeField] Material wireOnMaterial, wireOffMaterial;
 
     bool conduitEnabled;    // if the conduit is enabled
 
@@ -49,6 +50,18 @@ public class ConduitControl : MonoBehaviour
                     break;
                 case ObjectEffect.EffectType.DOOR_OPEN:     // Door closes when signal is recieved
                     obj.SetActive(!conduitEnabled);
+                    break;
+                case ObjectEffect.EffectType.WIRE_ON:
+                    if(conduitEnabled)  // If conduit is on, turn on wire
+                        obj.GetComponent<Renderer>().material = wireOnMaterial;
+                    else                // If conduit is off, turn off wire
+                        obj.GetComponent<Renderer>().material = wireOffMaterial;
+                    break;
+                case ObjectEffect.EffectType.WIRE_OFF:
+                    if (conduitEnabled)  // If conduit is on, turn off wire
+                        obj.GetComponent<Renderer>().material = wireOffMaterial;
+                    else                // If conduit is off, turn on wire
+                        obj.GetComponent<Renderer>().material = wireOnMaterial;
                     break;
             }
         }

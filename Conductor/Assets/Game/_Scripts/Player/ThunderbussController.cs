@@ -54,23 +54,21 @@ public class ThunderbussController : MonoBehaviour
 
     void GetMousePosInWorld()
     {
-        crosshair.transform.position = Input.mousePosition;
+        crosshair.transform.position = Input.mousePosition; // Set crosshair GUI to current mouse position
 
-        mousePosInWorld = camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -camera.transform.position.z));
+        mousePosInWorld = camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -camera.transform.position.z));   // Find the mouse position in the world
 
-        mousePosInWorld.z = thunderbussHolderTransform.position.z;
-
-        Debug.Log(mousePosInWorld);
+        mousePosInWorld.z = thunderbussHolderTransform.position.z;  // Set the Z position of the mouse position to be the same Z position as the thunderbuss
     }
 
     void Charging()
     {
-        currentCharge += Time.deltaTime;
-        if(currentCharge >= chargeTime && !chargeSoundPlayed)
+        currentCharge += Time.deltaTime; // Add deltatime to time charged
+        if(currentCharge >= chargeTime && !chargeSoundPlayed)   // If weapon is fully charged
         {
-            src.PlayOneShot(chargeSound);
-            chargeSoundPlayed = true;
-            chargeTrail.SetActive(true);
+            src.PlayOneShot(chargeSound);   // Play sound
+            chargeSoundPlayed = true;       // Stop sound from playing multiple times
+            chargeTrail.SetActive(true);    // Set the trail to be active
         }
     }
 
