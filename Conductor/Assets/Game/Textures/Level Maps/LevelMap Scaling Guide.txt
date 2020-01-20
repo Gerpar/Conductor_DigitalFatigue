@@ -1,0 +1,5 @@
+---Level Map Scaling in Unity---
+Each level map, when placed on a quad should be scaled to the image resolution divided by 4 and
+then rounded down. That should give us a reasonable method of getting a good environment scale.
+
+-Jared but spelled right.
