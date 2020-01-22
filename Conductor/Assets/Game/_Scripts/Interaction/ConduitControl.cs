@@ -6,8 +6,19 @@ public class ConduitControl : MonoBehaviour
 {
     [SerializeField] GameObject[] effectedObjects;
     [SerializeField] Material wireOnMaterial, wireOffMaterial;
+    [SerializeField] bool toggleable;
 
     bool conduitEnabled;    // if the conduit is enabled
+
+    public bool Toggleable
+    {
+        get { return toggleable; }
+    }
+
+    public bool ConduitEnabled
+    {
+        get { return conduitEnabled; }
+    }
 
     void Start()
     {

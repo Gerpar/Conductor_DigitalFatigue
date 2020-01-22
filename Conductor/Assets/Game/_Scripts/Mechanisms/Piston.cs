@@ -8,8 +8,8 @@ public class Piston : MonoBehaviour
     [SerializeField] float extensionHeight;
     [SerializeField] GameObject extensionObject;
 
-    private bool finishedMoving = true;
     private bool extending = false;
+    private bool isMoving = false;
     private Rigidbody rb;
 
     private Vector3 finalPosition, initialPosition;
@@ -17,47 +17,61 @@ public class Piston : MonoBehaviour
     {
         rb = extensionObject.GetComponent<Rigidbody>();
         finalPosition = new Vector3(extensionObject.transform.position.x, extensionObject.transform.position.y + extensionHeight, extensionObject.transform.position.z);
-        initialPosition = new Vector3(extensionObject.transform.position.x, 0, extensionObject.transform.position.z);
+        initialPosition = new Vector3(extensionObject.transform.position.x, extensionObject.transform.position.y, extensionObject.transform.position.z);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!finishedMoving)
+        if (isMoving)
         {
-            if(extending)
+            if (extending)
             {
-                rb.velocity = new Vector3(0, pistonMoveSpeed, 0);
-                if(extensionObject.transform.position.y >= finalPosition.y)
+                rb.MovePosition(extensionObject.transform.position + (Vector3.up * pistonMoveSpeed * Time.deltaTime));
+                if (extensionObject.transform.position.y >= finalPosition.y)
                 {
-                    finishedMoving = true;
                     extensionObject.transform.position = finalPosition;
-                    rb.velocity = Vector3.zero;
+                    isMoving = false;
                 }
             }
             else
             {
-                rb.velocity = new Vector3(0, -pistonMoveSpeed, 0);
+                rb.MovePosition(extensionObject.transform.position + (Vector3.up * -pistonMoveSpeed * Time.deltaTime));
                 if (extensionObject.transform.position.y <= initialPosition.y)
                 {
-                    finishedMoving = true;
                     extensionObject.transform.position = initialPosition;
-                    rb.velocity = Vector3.zero;
+                    isMoving = false;
                 }
+            }
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if(!isMoving)
+        {
+            if (extending)
+            {
+                extensionObject.transform.position = finalPosition;
+                rb.velocity = Vector3.zero;
+            }
+            else
+            {
+                extensionObject.transform.position = initialPosition;
+                rb.velocity = Vector3.zero;
             }
         }
     }
 
     public void Extend()
     {
-        finishedMoving = false;
+        isMoving = true;
         extending = true;
     }
 
     public void Retract()
     {
-        finishedMoving = false;
+        isMoving = true;
         extending = false;
     }
-
 }
