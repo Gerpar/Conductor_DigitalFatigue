@@ -8,7 +8,23 @@ public class ActivateConduitOnCollision : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Conduit"))  // Look for a conduit tag
         {
-            collision.gameObject.GetComponent<ConduitControl>().TurnOn();   // Turn on the conduit
+            ConduitControl condControl = collision.gameObject.GetComponent<ConduitControl>();
+
+            if (!condControl.Toggleable)
+            {
+                condControl.TurnOn();   // Turn on the conduit
+            }
+            else
+            {
+                if(condControl.ConduitEnabled)
+                {
+                    condControl.TurnOff();
+                }
+                else
+                {
+                    condControl.TurnOn();
+                }
+            }
         }
     }
 }
