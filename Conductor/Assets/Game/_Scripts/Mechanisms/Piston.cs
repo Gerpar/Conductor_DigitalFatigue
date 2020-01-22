@@ -15,7 +15,7 @@ public class Piston : MonoBehaviour
     private Vector3 finalPosition, initialPosition;
     void Start()
     {
-        rb = extensionObject.GetComponent<Rigidbody>();
+        rb = extensionObject.GetComponent<Rigidbody>(); // Get the rigidbody component of the piston extender
         finalPosition = new Vector3(extensionObject.transform.position.x, extensionObject.transform.position.y + extensionHeight, extensionObject.transform.position.z);
         initialPosition = new Vector3(extensionObject.transform.position.x, extensionObject.transform.position.y, extensionObject.transform.position.z);
     }
@@ -23,9 +23,9 @@ public class Piston : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isMoving)
+        if (isMoving)   // If the piston is moving
         {
-            if (extending)
+            if (extending)  // If the piston is extending
             {
                 rb.MovePosition(extensionObject.transform.position + (Vector3.up * pistonMoveSpeed * Time.deltaTime));
                 if (extensionObject.transform.position.y >= finalPosition.y)
@@ -34,7 +34,7 @@ public class Piston : MonoBehaviour
                     isMoving = false;
                 }
             }
-            else
+            else            // Piston is retracting
             {
                 rb.MovePosition(extensionObject.transform.position + (Vector3.up * -pistonMoveSpeed * Time.deltaTime));
                 if (extensionObject.transform.position.y <= initialPosition.y)

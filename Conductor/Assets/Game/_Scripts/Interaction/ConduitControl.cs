@@ -30,22 +30,21 @@ public class ConduitControl : MonoBehaviour
                 obj.AddComponent<ObjectEffect>();   // Add a standard component
             }
         }
-
-        UpdateObjects();
+        UpdateObjects();    // Update the objects to their current states
     }
 
     // Turns on the conduit
     public void TurnOn()
     {
         conduitEnabled = true;
-        UpdateObjects();
+        UpdateObjects();    // update the attached objects
     }
 
     // Turns on the conduit
     public void TurnOff()
     {
         conduitEnabled = false;
-        UpdateObjects();
+        UpdateObjects();    // Update the attached objects
     }
 
     private void UpdateObjects()
@@ -54,14 +53,19 @@ public class ConduitControl : MonoBehaviour
         {
             ObjectEffect.EffectType effect = obj.GetComponent<ObjectEffect>().effect;   // Get the effect that the conduit should have on the object
 
-            switch(effect)  // Do a switch on that effect to quickly find the effect
+            switch (effect)  // Do a switch on that effect to quickly find the effect
             {
+                // Doors
+                //--------------------
                 case ObjectEffect.EffectType.DOOR_CLOSE:    // Door opens when signal is revieved
                     obj.SetActive(conduitEnabled);
                     break;
                 case ObjectEffect.EffectType.DOOR_OPEN:     // Door closes when signal is recieved
                     obj.SetActive(!conduitEnabled);
                     break;
+
+                // Wires
+                //--------------------
                 case ObjectEffect.EffectType.WIRE_ON:
                     if(conduitEnabled)  // If conduit is on, turn on wire
                         obj.GetComponent<Renderer>().material = wireOnMaterial;
@@ -74,17 +78,34 @@ public class ConduitControl : MonoBehaviour
                     else                // If conduit is off, turn on wire
                         obj.GetComponent<Renderer>().material = wireOnMaterial;
                     break;
+
+                // Pistons
+                //--------------------
                 case ObjectEffect.EffectType.PISTON_EXTEND:
-                    if(conduitEnabled)
+                    if(conduitEnabled)  // If conduit is on, extend the piston
                         obj.GetComponent<Piston>().Extend();
-                    else
+                    else                // If conduit os off, retract the piston
                         obj.GetComponent<Piston>().Retract();
                     break;
                 case ObjectEffect.EffectType.PISTON_RETRACT:
-                    if(conduitEnabled)
+                    if(conduitEnabled)  // If conduit is on, retract the piston
                         obj.GetComponent<Piston>().Retract();
-                    else
+                    else                // If conduit is off, extend the piston
                         obj.GetComponent<Piston>().Extend();
+                    break;
+
+                // Gates
+                //--------------------
+                case ObjectEffect.EffectType.LOGIC_GATE:      // AND
+                    LogicGate gate = obj.GetComponent<LogicGate>();
+                    if(gate.conduitA == gameObject) // Check if this conduit is conduit A
+                    {
+                        gate.InA = conduitEnabled;
+                    }
+                    else                            // This conduit is conduit B
+                    {
+                        gate.InB = conduitEnabled;
+                    }
                     break;
             }
         }
