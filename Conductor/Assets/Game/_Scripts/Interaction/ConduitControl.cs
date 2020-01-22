@@ -6,8 +6,19 @@ public class ConduitControl : MonoBehaviour
 {
     [SerializeField] GameObject[] effectedObjects;
     [SerializeField] Material wireOnMaterial, wireOffMaterial;
+    [SerializeField] bool toggleable;
 
     bool conduitEnabled;    // if the conduit is enabled
+
+    public bool Toggleable
+    {
+        get { return toggleable; }
+    }
+
+    public bool ConduitEnabled
+    {
+        get { return conduitEnabled; }
+    }
 
     void Start()
     {
@@ -62,6 +73,18 @@ public class ConduitControl : MonoBehaviour
                         obj.GetComponent<Renderer>().material = wireOffMaterial;
                     else                // If conduit is off, turn on wire
                         obj.GetComponent<Renderer>().material = wireOnMaterial;
+                    break;
+                case ObjectEffect.EffectType.PISTON_EXTEND:
+                    if(conduitEnabled)
+                        obj.GetComponent<Piston>().Extend();
+                    else
+                        obj.GetComponent<Piston>().Retract();
+                    break;
+                case ObjectEffect.EffectType.PISTON_RETRACT:
+                    if(conduitEnabled)
+                        obj.GetComponent<Piston>().Retract();
+                    else
+                        obj.GetComponent<Piston>().Extend();
                     break;
             }
         }
