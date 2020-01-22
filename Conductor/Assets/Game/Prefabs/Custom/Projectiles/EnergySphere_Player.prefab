@@ -159,8 +159,8 @@ GameObject:
   - component: {fileID: 2887317920515250612}
   - component: {fileID: 2887317920515250613}
   - component: {fileID: 2887317920515250610}
-  - component: {fileID: -6970647630148627070}
   - component: {fileID: -2871017789007076009}
+  - component: {fileID: 9055607898391345490}
   m_Layer: 8
   m_Name: EnergySphere_Player
   m_TagString: Untagged
@@ -274,18 +274,6 @@ MonoBehaviour:
   projectileVelocity: 20
   projectileAcceleration: 0
   lifeTime: 2
---- !u!114 &-6970647630148627070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2887317920515250608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a61d3fce4a42d844adaf7526f202589, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-2871017789007076009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,6 +284,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b17223ef7a310514a8c09a9d9d5b57fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9055607898391345490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2887317920515250608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bd90186cd14f0b489aad6596e36d59a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6894315447504323970

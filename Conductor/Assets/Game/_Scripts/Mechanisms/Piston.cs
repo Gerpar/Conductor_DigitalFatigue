@@ -27,16 +27,16 @@ public class Piston : MonoBehaviour
         {
             if (extending)  // If the piston is extending
             {
-                rb.MovePosition(extensionObject.transform.position + (Vector3.up * pistonMoveSpeed * Time.deltaTime));
-                if (extensionObject.transform.position.y >= finalPosition.y)
+                rb.MovePosition(extensionObject.transform.position + (transform.up * pistonMoveSpeed * Time.deltaTime));  // Move upwards determening on the object's up vector
+                if (extensionObject.transform.position.y >= finalPosition.y)    // If at / passed the max extension distance
                 {
-                    extensionObject.transform.position = finalPosition;
-                    isMoving = false;
+                    extensionObject.transform.position = finalPosition; // Set position to max extended position
+                    isMoving = false;                                   // Disable moving
                 }
             }
             else            // Piston is retracting
             {
-                rb.MovePosition(extensionObject.transform.position + (Vector3.up * -pistonMoveSpeed * Time.deltaTime));
+                rb.MovePosition(extensionObject.transform.position + (transform.up * -pistonMoveSpeed * Time.deltaTime)); // Move downwards determening on the object's up vector
                 if (extensionObject.transform.position.y <= initialPosition.y)
                 {
                     extensionObject.transform.position = initialPosition;
