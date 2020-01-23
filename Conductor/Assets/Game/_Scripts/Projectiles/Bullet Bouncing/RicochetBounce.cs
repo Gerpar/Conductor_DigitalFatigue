@@ -24,9 +24,10 @@ public class RicochetBounce : MonoBehaviour
             Debug.Log("Bouncing");
             Debug.Log("Initial angle: " + transform.eulerAngles);
             Vector3 reflectDir = Vector3.Reflect(ray.direction, hit.normal);
-            float rot = Mathf.Atan2(reflectDir.y, reflectDir.z) * Mathf.Rad2Deg;
-            transform.eulerAngles = new Vector3(rot, 0, 0);
-            rb.velocity = transform.right * rb.velocity.magnitude;
+            float rot = 180 - Mathf.Atan2(reflectDir.y, reflectDir.z) * Mathf.Rad2Deg;
+            Debug.Log(rot);
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x + rot, transform.eulerAngles.y, transform.eulerAngles.z);
+            rb.velocity = transform.forward * rb.velocity.magnitude;
 
             Debug.Log("Initial angle: " + transform.eulerAngles);
         }
