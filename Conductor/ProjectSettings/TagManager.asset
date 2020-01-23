@@ -13,6 +13,7 @@ TagManager:
   - Checkpoint
   - Waypoint
   - Conduit
+  - BulletBouncer
   layers:
   - Default
   - TransparentFX
