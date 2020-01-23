@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 2887317920515250610}
   - component: {fileID: -2871017789007076009}
   - component: {fileID: 9055607898391345490}
+  - component: {fileID: 2942067369642409789}
   m_Layer: 8
   m_Name: EnergySphere_Player
   m_TagString: Untagged
@@ -241,7 +242,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1.26
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2887317920515250613
 Rigidbody:
@@ -271,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a55f3126f7eca148bd96dd852b57663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectileVelocity: 20
+  projectileVelocity: 35
   projectileAcceleration: 0
   lifeTime: 2
 --- !u!114 &-2871017789007076009
@@ -298,6 +299,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd90186cd14f0b489aad6596e36d59a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!122 &2942067369642409789
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2887317920515250608}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4282512122
+  m_Size: 2.42
 --- !u!1 &6894315447504323970
 GameObject:
   m_ObjectHideFlags: 0
