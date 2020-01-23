@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 0.97
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: da976b1a4f7ebb949b0f71341e4f1821, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 6dc1e4667cf1d1346945e61c87bb2a70, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1762,11 +1762,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: dec7cd42960366243b5ad41d2112c616, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17
+      value: 57.01
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: dec7cd42960366243b5ad41d2112c616, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: dec7cd42960366243b5ad41d2112c616, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2356,6 +2356,14 @@ PrefabInstance:
     - target: {fileID: 11400000, guid: dec7cd42960366243b5ad41d2112c616, type: 3}
       propertyPath: thirdJumpForce.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 595080057, guid: dec7cd42960366243b5ad41d2112c616, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.8134308
+      objectReference: {fileID: 0}
+    - target: {fileID: 595080057, guid: dec7cd42960366243b5ad41d2112c616, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[1].value
+      value: 0.20149231
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400002, guid: dec7cd42960366243b5ad41d2112c616, type: 3}

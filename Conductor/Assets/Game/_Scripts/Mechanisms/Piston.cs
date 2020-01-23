@@ -15,7 +15,7 @@ public class Piston : MonoBehaviour
     private Vector3 finalPosition, initialPosition;
     void Start()
     {
-        rb = extensionObject.GetComponent<Rigidbody>();
+        rb = extensionObject.GetComponent<Rigidbody>(); // Get the rigidbody component of the piston extender
         finalPosition = new Vector3(extensionObject.transform.position.x, extensionObject.transform.position.y + extensionHeight, extensionObject.transform.position.z);
         initialPosition = new Vector3(extensionObject.transform.position.x, extensionObject.transform.position.y, extensionObject.transform.position.z);
     }
@@ -23,20 +23,20 @@ public class Piston : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isMoving)
+        if (isMoving)   // If the piston is moving
         {
-            if (extending)
+            if (extending)  // If the piston is extending
             {
-                rb.MovePosition(extensionObject.transform.position + (Vector3.up * pistonMoveSpeed * Time.deltaTime));
-                if (extensionObject.transform.position.y >= finalPosition.y)
+                rb.MovePosition(extensionObject.transform.position + (transform.up * pistonMoveSpeed * Time.deltaTime));  // Move upwards determening on the object's up vector
+                if (extensionObject.transform.position.y >= finalPosition.y)    // If at / passed the max extension distance
                 {
-                    extensionObject.transform.position = finalPosition;
-                    isMoving = false;
+                    extensionObject.transform.position = finalPosition; // Set position to max extended position
+                    isMoving = false;                                   // Disable moving
                 }
             }
-            else
+            else            // Piston is retracting
             {
-                rb.MovePosition(extensionObject.transform.position + (Vector3.up * -pistonMoveSpeed * Time.deltaTime));
+                rb.MovePosition(extensionObject.transform.position + (transform.up * -pistonMoveSpeed * Time.deltaTime)); // Move downwards determening on the object's up vector
                 if (extensionObject.transform.position.y <= initialPosition.y)
                 {
                     extensionObject.transform.position = initialPosition;
