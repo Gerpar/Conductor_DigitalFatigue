@@ -14,6 +14,11 @@ public class PlayerMove : MonoBehaviour
 	public Animator animator;					//object with animation controller on, which you want to animate
 	public AudioClip jumpSound;					//play when jumping
 	public AudioClip landSound;					//play when landing on ground
+
+    // manual camera adjustment
+    public int camX;
+    public int camY;
+    public int camZ;
 	
 	//movement
 	public float accel = 70f;					//acceleration/deceleration in air or on the ground
@@ -72,6 +77,7 @@ public class PlayerMove : MonoBehaviour
 		}
 		//usual setup
 		mainCam = GameObject.FindGameObjectWithTag("MainCamera").transform;
+
 		dealDamage = GetComponent<DealDamage>();
 		characterMotor = GetComponent<CharacterMotor>();
 		rigid = GetComponent<Rigidbody>();
@@ -99,9 +105,9 @@ public class PlayerMove : MonoBehaviour
 		screenMovementSpace = Quaternion.Euler (0, mainCam.eulerAngles.y, 0);
 		screenMovementForward = screenMovementSpace * Vector3.forward;
 		screenMovementRight = screenMovementSpace * Vector3.right;
-		
-		//get movement input, set direction to move in
-		float h = Input.GetAxisRaw ("Horizontal");
+
+        //get movement input, set direction to move in
+        float h = Input.GetAxisRaw ("Horizontal");
 		float v = Input.GetAxisRaw ("Vertical");
 		
 		//only apply vertical input to movemement, if player is not sidescroller
@@ -129,7 +135,12 @@ public class PlayerMove : MonoBehaviour
 			animator.SetBool("Grounded", grounded);
 			animator.SetFloat("YVelocity", GetComponent<Rigidbody>().velocity.y);
 		}
-	}
+
+
+        //Modify camera height by parameter. I added this to have more control of the camera. -Jared R
+        mainCam.position.Set(mainCam.position.x + camX, mainCam.position.y + camY, mainCam.position.z + camZ);
+
+    }
 	
 	//prevents rigidbody from sliding down slight slopes (read notes in characterMotor class for more info on friction)
 	void OnCollisionStay(Collision other)
