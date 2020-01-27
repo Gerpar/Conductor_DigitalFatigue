@@ -4,16 +4,21 @@ using UnityEngine;
 
 public abstract class BaseMatter : MonoBehaviour
 {
-    public bool IsOnFire { get { return onFire; } }
-    public bool IsConducting { get { return conducting; } }
+    public bool IsBurning { get { return burning; } }
+    public bool IsElectrified { get { return electrified; } }
+    public bool IsFlammable { get { return flammable; } }
+    public bool IsConductive { get { return conductive; } }
     public bool IsBuoyant { get { return buoyant; } }
 
-    protected bool onFire = false;
-    protected bool conducting = false;
+    protected bool burning = false;
+    protected bool electrified = false;
+
+    protected bool flammable = false;
+    protected bool conductive = false;
     protected bool buoyant = false;
 
-    public bool CheckForFire (BaseMatter mat)
+    public virtual void SetOnFire()
     {
-        return mat.IsOnFire;
+        burning = true;
     }
 }

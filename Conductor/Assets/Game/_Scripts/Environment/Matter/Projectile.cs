@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wood : BaseMatter
+public class Projectile : BaseMatter
 {
     void Awake()
     {
-        buoyant = true;
+        burning = true;
+        electrified = true;
     }
 
     // Update is called once per frame
@@ -22,7 +23,8 @@ public class Wood : BaseMatter
 
         if (gameObject.TryGetComponent(out material))
         {
-            onFire = CheckForFire(material);
+            if(material.IsFlammable)
+                material.SetOnFire();
         }
     }
 }
