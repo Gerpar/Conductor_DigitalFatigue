@@ -274,7 +274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileVelocity: 35
   projectileAcceleration: 0
-  lifeTime: 2
+  lifeTime: 10
 --- !u!114 &-2871017789007076009
 MonoBehaviour:
   m_ObjectHideFlags: 0

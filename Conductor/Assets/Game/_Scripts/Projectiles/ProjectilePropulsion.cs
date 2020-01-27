@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectilePropulsion : MonoBehaviour
 {
-    [SerializeField] float projectileVelocity;
+    public float projectileVelocity;
     [SerializeField] float projectileAcceleration;
     [SerializeField] float lifeTime; // How long until the projectile is destroyed
     private Rigidbody rb;
