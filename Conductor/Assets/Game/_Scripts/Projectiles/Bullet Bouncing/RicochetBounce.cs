@@ -11,7 +11,6 @@ public class RicochetBounce : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        collisionMask = 1 << collisionMask;
     }
 
     // Update is called once per frame
