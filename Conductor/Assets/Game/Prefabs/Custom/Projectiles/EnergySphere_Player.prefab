@@ -273,7 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileVelocity: 20
   projectileAcceleration: 0
-  lifeTime: 2
+  lifeTime: 10
 --- !u!114 &-2871017789007076009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1024
 --- !u!1 &6894315447504323970
 GameObject:
   m_ObjectHideFlags: 0

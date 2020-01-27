@@ -11,6 +11,7 @@ public class RicochetBounce : MonoBehaviour
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
+        collisionMask = 1 << collisionMask;
     }
 
     // Update is called once per frame
@@ -21,24 +22,59 @@ public class RicochetBounce : MonoBehaviour
 
         if(Physics.Raycast(ray, out hit, Time.deltaTime * gameObject.GetComponent<ProjectilePropulsion>().projectileVelocity + 0.5f, collisionMask))
         {
-            Debug.Log("Bouncing");
-            Debug.Log("Initial angle: " + transform.eulerAngles);
-            Vector3 reflectDir = Vector3.Reflect(ray.direction, hit.normal);
-            float rot = 180 - Mathf.Atan2(reflectDir.y, reflectDir.z) * Mathf.Rad2Deg;
-            Debug.Log(rot);
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x + rot, transform.eulerAngles.y, transform.eulerAngles.z);
+            if(ray.direction.x > 0.5)   // Going Right
+            {
+                if(hit.normal.x <= -0.5 && hit.normal.y <= -0.5)  // Top right bouncer
+                {
+                    transform.eulerAngles = new Vector3(90, transform.eulerAngles.y, 0);    // Go down
+                }
+                else if (hit.normal.x <= -0.5 && hit.normal.y >= 0.5)  // Bot right bouncer
+                {
+                    transform.eulerAngles = new Vector3(-90, transform.eulerAngles.y, 0);    // Go up
+                }
+            }
+            else if(ray.direction.x < -0.5) // Going Left
+            {
+                if (hit.normal.x >= 0.5 && hit.normal.y <= 0.5)  // Top left bouncer
+                {
+                    transform.eulerAngles = new Vector3(90, transform.eulerAngles.y, 0);    // Go down
+                }
+                else if (hit.normal.x >= 0.5 && hit.normal.y >= 0.5)  // Bot left bouncer
+                {
+                    transform.eulerAngles = new Vector3(-90, transform.eulerAngles.y, 0);    // Go up
+                }
+            }
+            else if(ray.direction.y > 0.5)  // Going up
+            {
+                if (hit.normal.x <= -0.5 && hit.normal.y <= -0.5)  // Top right bouncer
+                {
+                    transform.eulerAngles = new Vector3(-180, transform.eulerAngles.y, 0);    // Go right
+                }
+                else if (hit.normal.x >= 0.5 && hit.normal.y <= 0.5)  // Top left bouncer
+                {
+                    transform.eulerAngles = new Vector3(180, transform.eulerAngles.y, 0);  // Go left
+                }
+            }
+            else if(ray.direction.y < -0.5) // Going down
+            {
+                if (hit.normal.x <= -0.5 && hit.normal.y >= 0.5)  // Bot right bouncer
+                {
+                    transform.eulerAngles = new Vector3(180, transform.eulerAngles.y, 0);  // Go left
+                }
+                else if (hit.normal.x >= 0.5 && hit.normal.y >= 0.5)  // Bot left bouncer
+                {
+                    transform.eulerAngles = new Vector3(-180, transform.eulerAngles.y, 0);    // Go right
+                }
+            }
+
             rb.velocity = transform.forward * rb.velocity.magnitude;
 
-            Debug.Log("Initial angle: " + transform.eulerAngles);
+            //Debug.Log("Initial angle: " + transform.eulerAngles);
         }
     }
-
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("BulletBouncer"))
-        {
-        }
-        else
+        if(!collision.gameObject.CompareTag("BulletBouncer"))
         {
             Destroy(gameObject);
         }
