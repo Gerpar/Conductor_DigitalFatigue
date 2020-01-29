@@ -107,6 +107,14 @@ public class ConduitControl : MonoBehaviour
                         gate.InB = conduitEnabled;
                     }
                     break;
+                // Bouncers
+                //--------------------
+                case ObjectEffect.EffectType.BOUNCER:
+                    obj.GetComponent<Bouncer>().Enabled = conduitEnabled;
+                    break;
+                case ObjectEffect.EffectType.BOUNCER_INV:
+                    obj.GetComponent<Bouncer>().enabled = !conduitEnabled;
+                    break;
             }
         }
     }
