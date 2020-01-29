@@ -16,15 +16,18 @@ public class Projectile : BaseMatter
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        GameObject collidedObj = collision.gameObject;
-        BaseMatter material;
-
-        if (gameObject.TryGetComponent(out material))
         {
-            if(material.IsFlammable)
-                material.SetOnFire();
+            GameObject triggeredObj = other.gameObject;
+            BaseMatter material;
+
+            if (triggeredObj.TryGetComponent(out material))
+            {
+                if (material.IsFlammable && !material.IsBurning)
+                    material.SetOnFire();
+            }
         }
     }
+
 }
