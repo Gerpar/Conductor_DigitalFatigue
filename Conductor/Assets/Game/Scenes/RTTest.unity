@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flame: {fileID: 9039024529606043890, guid: 15f3e285bdd01354fb73f24ebb97ea6c, type: 3}
-  timeToDestroy: 2.5
+  timeToDestroy: 3
 --- !u!65 &304992953
 BoxCollider:
   m_ObjectHideFlags: 0

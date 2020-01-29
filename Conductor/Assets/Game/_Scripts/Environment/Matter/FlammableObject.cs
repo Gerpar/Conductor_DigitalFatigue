@@ -24,13 +24,18 @@ public class FlammableObject : BaseMatter
             timeElapsed += Time.deltaTime;
 
             if (timeElapsed >= timeToDestroy)
-                Debug.Log("ITS OVER");
+                Destroy(this.gameObject);
         }
     }
 
     public override void SetOnFire()
     {
+        ParticleSystem.MainModule main;
+
         burning = true;
-        Instantiate(flame, this.transform);
+        flame = Instantiate(flame, this.transform.position, flame.transform.rotation);
+        main = flame.main;
+        main.duration = timeToDestroy;
+        flame.Play();
     }
 }
