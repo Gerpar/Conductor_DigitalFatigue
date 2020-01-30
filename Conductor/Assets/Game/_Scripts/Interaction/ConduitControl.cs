@@ -20,6 +20,8 @@ public class ConduitControl : MonoBehaviour
         get { return conduitEnabled; }
     }
 
+    
+
     void Start()
     {
         foreach(GameObject obj in effectedObjects)  // Check each object in the array
@@ -51,7 +53,7 @@ public class ConduitControl : MonoBehaviour
     {
         foreach(GameObject obj in effectedObjects)  // For every object the conduit affects
         {
-            ObjectEffect.EffectType effect = obj.GetComponent<ObjectEffect>().effect;   // Get the effect that the conduit should have on the object
+            ObjectEffect.EffectType effect = obj.GetComponent<ObjectEffect>().effect;   // Get the effect that the conduit should have on the objectd
 
             switch (effect)  // Do a switch on that effect to quickly find the effect
             {

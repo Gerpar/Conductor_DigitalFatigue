@@ -62,7 +62,7 @@ public class CameraFollow : MonoBehaviour
     void SmoothLookAt()
     {
         Quaternion rotation = Quaternion.LookRotation(target.position - transform.position);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotateDamping * Time.deltaTime);
+        //transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotateDamping * Time.deltaTime);
     }
 
     //move camera smoothly toward its target
