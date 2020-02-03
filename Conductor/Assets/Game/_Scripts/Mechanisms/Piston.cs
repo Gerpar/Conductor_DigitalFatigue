@@ -5,73 +5,49 @@ using UnityEngine;
 public class Piston : MonoBehaviour
 {
     [SerializeField] float pistonMoveSpeed;
-    [SerializeField] float extensionHeight;
+    [SerializeField] Vector3 extensionValue;
     [SerializeField] GameObject extensionObject;
 
     private bool extending = false;
     private bool isMoving = false;
-    private Rigidbody rb;
 
     private Vector3 finalPosition, initialPosition;
     void Start()
     {
-        rb = extensionObject.GetComponent<Rigidbody>(); // Get the rigidbody component of the piston extender
-        finalPosition = new Vector3(extensionObject.transform.position.x, extensionObject.transform.position.y + extensionHeight, extensionObject.transform.position.z);
-        initialPosition = new Vector3(extensionObject.transform.position.x, extensionObject.transform.position.y, extensionObject.transform.position.z);
+        finalPosition = extensionObject.transform.position + extensionValue;
+        initialPosition = extensionObject.transform.position;
+        Debug.Log(gameObject.name + ": " + finalPosition + ", " + initialPosition);
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator MoveToPosition(Vector3 initialPos, Vector3 newPos, float movespeed)
     {
-        if (isMoving)   // If the piston is moving
+        while(Vector3.Distance(extensionObject.transform.position, finalPosition) > 0.05f)
         {
-            if (extending)  // If the piston is extending
-            {
-                rb.MovePosition(extensionObject.transform.position + (transform.up * pistonMoveSpeed * Time.deltaTime));  // Move upwards determening on the object's up vector
-                if (extensionObject.transform.position.y >= finalPosition.y)    // If at / passed the max extension distance
-                {
-                    extensionObject.transform.position = finalPosition; // Set position to max extended position
-                    isMoving = false;                                   // Disable moving
-                }
-            }
-            else            // Piston is retracting
-            {
-                rb.MovePosition(extensionObject.transform.position + (transform.up * -pistonMoveSpeed * Time.deltaTime)); // Move downwards determening on the object's up vector
-                if (extensionObject.transform.position.y <= initialPosition.y)
-                {
-                    extensionObject.transform.position = initialPosition;
-                    isMoving = false;
-                }
-            }
+            extensionObject.GetComponent<Rigidbody>().MovePosition(Vector3.MoveTowards(extensionObject.transform.position, newPos, pistonMoveSpeed * Time.deltaTime)); // Move towards the end point over time
+            yield return null;
         }
+
+        StartCoroutine(StayAtPosition(newPos)); // Locks the position to the new position
     }
 
-    private void LateUpdate()
+    IEnumerator StayAtPosition(Vector3 position)
     {
-        if(!isMoving)
+        while(true)
         {
-            if (extending)
-            {
-                extensionObject.transform.position = finalPosition;
-                rb.velocity = Vector3.zero;
-            }
-            else
-            {
-                extensionObject.transform.position = initialPosition;
-                rb.velocity = Vector3.zero;
-            }
+            extensionObject.transform.position = position;
+            yield return null;
         }
     }
 
     public void Extend()
     {
-        isMoving = true;
-        extending = true;
+        StopAllCoroutines();
+        StartCoroutine(MoveToPosition(initialPosition, finalPosition, pistonMoveSpeed));
     }
 
     public void Retract()
     {
-        isMoving = true;
-        extending = false;
+        StopAllCoroutines();
+        StartCoroutine(MoveToPosition(finalPosition, initialPosition, pistonMoveSpeed));
     }
 }
