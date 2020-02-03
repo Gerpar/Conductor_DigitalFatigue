@@ -5,7 +5,7 @@ using UnityEngine;
 public class Piston : MonoBehaviour
 {
     [SerializeField] float pistonMoveSpeed;
-    [SerializeField] float extensionHeight;
+    [SerializeField] Vector3 extensionValue;
     [SerializeField] GameObject extensionObject;
 
     private bool extending = false;
@@ -14,8 +14,9 @@ public class Piston : MonoBehaviour
     private Vector3 finalPosition, initialPosition;
     void Start()
     {
-        finalPosition = new Vector3(extensionObject.transform.position.x, extensionObject.transform.position.y + extensionHeight, extensionObject.transform.position.z);
-        initialPosition = new Vector3(extensionObject.transform.position.x, extensionObject.transform.position.y, extensionObject.transform.position.z);
+        finalPosition = extensionObject.transform.position + extensionValue;
+        initialPosition = extensionObject.transform.position;
+        Debug.Log(gameObject.name + ": " + finalPosition + ", " + initialPosition);
     }
 
     IEnumerator MoveToPosition(Vector3 initialPos, Vector3 newPos, float movespeed)
@@ -33,7 +34,7 @@ public class Piston : MonoBehaviour
     {
         while(true)
         {
-            extensionObject.GetComponent<Rigidbody>().position = position;
+            extensionObject.transform.position = position;
             yield return null;
         }
     }
