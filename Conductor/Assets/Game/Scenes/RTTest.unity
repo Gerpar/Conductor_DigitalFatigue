@@ -1780,6 +1780,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1318479503}
   - component: {fileID: 1318479504}
+  - component: {fileID: 1318479505}
   m_Layer: 0
   m_Name: Rope
   m_TagString: Untagged
@@ -1819,6 +1820,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flame: {fileID: 9039024529606043890, guid: 15f3e285bdd01354fb73f24ebb97ea6c, type: 3}
   timeToDestroy: 2
+--- !u!65 &1318479505
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318479502}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3840358, y: 9.745733, z: 1}
+  m_Center: {x: 0.024365783, y: -4.3728666, z: 0}
 --- !u!1001 &1374580828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3016,6 +3030,7 @@ GameObject:
   - component: {fileID: 2118050891}
   - component: {fileID: 2118050890}
   - component: {fileID: 2118050889}
+  - component: {fileID: 2118050894}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -3147,6 +3162,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118050887}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2118050894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118050887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e090d7a74345d864d9f526c1290bc9ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flame: {fileID: 9039024529606043890, guid: 15f3e285bdd01354fb73f24ebb97ea6c, type: 3}
+  timeToDestroy: 2
 --- !u!1 &2135770526
 GameObject:
   m_ObjectHideFlags: 0
