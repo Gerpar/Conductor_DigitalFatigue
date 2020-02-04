@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Robert Thomas
+// This script give the player's projectiles the ability to set things on fire and conduct electricity
 
 public class Projectile : BaseMatter
 {

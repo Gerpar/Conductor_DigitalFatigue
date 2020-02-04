@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Robert Thomas
+// This script marks any object it is attached to as flammable, and handles it's destruction once set on fire
 
 public class FlammableObject : BaseMatter
 {
