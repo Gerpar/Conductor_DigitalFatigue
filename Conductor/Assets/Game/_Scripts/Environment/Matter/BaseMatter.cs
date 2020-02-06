@@ -29,4 +29,9 @@ public abstract class BaseMatter : MonoBehaviour
     {
 
     }
+
+    public virtual void Rise()
+    {
+
+    }
 }
