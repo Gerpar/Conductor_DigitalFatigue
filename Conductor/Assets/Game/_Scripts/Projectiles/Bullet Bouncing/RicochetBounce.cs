@@ -5,6 +5,7 @@ using UnityEngine;
 public class RicochetBounce : MonoBehaviour
 {
     [SerializeField] LayerMask collisionMask;
+    [SerializeField] GameObject collisionParticles;
 
     Rigidbody rb;
     // Start is called before the first frame update
@@ -75,6 +76,25 @@ public class RicochetBounce : MonoBehaviour
     {
         if(!collision.gameObject.CompareTag("BulletBouncer"))
         {
+            foreach (Transform child in transform)
+            {
+                if (child.gameObject.CompareTag("KeepChildAfterDeath"))
+                {
+                    child.transform.SetParent(null);
+                    if (child.gameObject.GetComponent<ParticleSystem>())
+                    {
+                        child.gameObject.GetComponent<ParticleSystem>().Stop();
+                    }
+                    if (child.gameObject.GetComponent<TrailRenderer>())
+                    {
+                        child.gameObject.GetComponent<TrailRenderer>().emitting = false;
+                    }
+                }
+                Destroy(child.gameObject, 5.0f);
+            }
+
+            GameObject newParticles = Instantiate(collisionParticles, transform.position, transform.rotation, null);
+            Destroy(newParticles, 2.0f);
             Destroy(gameObject);
         }
     }

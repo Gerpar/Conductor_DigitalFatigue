@@ -14,6 +14,7 @@ TagManager:
   - Waypoint
   - Conduit
   - BulletBouncer
+  - KeepChildAfterDeath
   layers:
   - Default
   - TransparentFX
@@ -26,10 +27,10 @@ TagManager:
   - Player
   - Pistons
   - Bullet Ricochet
-  - 
-  - 
-  - 
-  - 
+  - PostProcessing
+  - EnemyObjects
+  - PlayerProjectile
+  - EnemyProjectile
   - 
   - 
   - 
