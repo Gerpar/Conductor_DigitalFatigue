@@ -1,5 +1,62 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &403649047827644578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7983204831301124812}
+  - component: {fileID: 6807779703579034521}
+  - component: {fileID: 2510882716410316757}
+  m_Layer: 8
+  m_Name: MatterSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7983204831301124812
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403649047827644578}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2887317920515250611}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &6807779703579034521
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403649047827644578}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.26
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2510882716410316757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403649047827644578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7540f457bd4bc41b44aaf7ca3e4a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1301214074263048304
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,14 +213,12 @@ GameObject:
   - component: {fileID: 2887317920515250611}
   - component: {fileID: 2887317920515250614}
   - component: {fileID: 2887317920515250615}
-  - component: {fileID: 2887317920515250612}
   - component: {fileID: 6518714839941167929}
   - component: {fileID: 2887317920515250613}
   - component: {fileID: 2887317920515250610}
   - component: {fileID: -2871017789007076009}
   - component: {fileID: 9055607898391345490}
   - component: {fileID: 2942067369642409789}
-  - component: {fileID: 3651094512030925263}
   m_Layer: 8
   m_Name: EnergySphere_Player
   m_TagString: Untagged
@@ -184,6 +239,7 @@ Transform:
   m_Children:
   - {fileID: 1492538997799349217}
   - {fileID: 7845543290197023248}
+  - {fileID: 7983204831301124812}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -233,19 +289,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &2887317920515250612
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2887317920515250608}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.26
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &6518714839941167929
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -329,18 +372,6 @@ Halo:
     serializedVersion: 2
     rgba: 4282512122
   m_Size: 2.42
---- !u!114 &3651094512030925263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2887317920515250608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd7540f457bd4bc41b44aaf7ca3e4a85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6894315447504323970
 GameObject:
   m_ObjectHideFlags: 0
