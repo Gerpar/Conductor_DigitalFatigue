@@ -31,7 +31,7 @@ public class ThunderbussController : MonoBehaviour
         src = firePoint.GetComponent<AudioSource>();
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
-        chargeTrail.SetActive(false);
+        chargeTrail.GetComponent<TrailRenderer>().emitting = false;
     }
 
     // Update is called once per frame
@@ -68,7 +68,7 @@ public class ThunderbussController : MonoBehaviour
         {
             src.PlayOneShot(chargeSound);   // Play sound
             chargeSoundPlayed = true;       // Stop sound from playing multiple times
-            chargeTrail.SetActive(true);    // Set the trail to be active
+            chargeTrail.GetComponent<TrailRenderer>().emitting = true;    // Set the trail to be active
         }
     }
 
@@ -79,7 +79,7 @@ public class ThunderbussController : MonoBehaviour
             GameObject newOrb = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);  // Instantiate new orb at firepoint position going forwards
             src.PlayOneShot(fireSound); // Play sound
             chargeSoundPlayed = false;
-            chargeTrail.SetActive(false);
+            chargeTrail.GetComponent<TrailRenderer>().emitting = false;
         }
         currentCharge = 0;  // Reset charge
     }

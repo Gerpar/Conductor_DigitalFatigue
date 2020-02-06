@@ -59,11 +59,14 @@ public class Water : MonoBehaviour
 			//stop if we arent effecting player
 			if (r.tag == "Player" && !effectPlayerDrag)
 				return;
-	
-			//store objects default drag values
-			dragStore.Add (r.gameObject, r.drag);
-			angularStore.Add(r.gameObject, r.angularDrag);
-			
+
+            //store objects default drag values (if it's values have not already been stored)
+            if (!dragStore.ContainsKey(r.gameObject))
+            {
+                dragStore.Add(r.gameObject, r.drag);
+                angularStore.Add(r.gameObject, r.angularDrag);
+            }
+
 			//apply new drag values to object
 			r.drag = resistance;
 			r.angularDrag = angularResistance;
