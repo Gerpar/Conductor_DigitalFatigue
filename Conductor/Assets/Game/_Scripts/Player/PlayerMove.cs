@@ -298,7 +298,7 @@ public class PlayerMove : MonoBehaviour
     {
         GameObject triggeredObj = other.gameObject;
 
-        if (inWater && triggeredObj.tag == "Water" && inWater)
+        if (triggeredObj.tag == "Water" && inWater)
             inWater = false;
     }
 }

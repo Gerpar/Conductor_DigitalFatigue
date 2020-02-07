@@ -2102,7 +2102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5400000, guid: dec7cd42960366243b5ad41d2112c616, type: 3}
       propertyPath: m_Mass
-      value: 2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 11400004, guid: dec7cd42960366243b5ad41d2112c616, type: 3}
       propertyPath: currentHealth
@@ -2611,7 +2611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: dec7cd42960366243b5ad41d2112c616, type: 3}
       propertyPath: jumpForce.y
-      value: 30
+      value: 1.35
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: dec7cd42960366243b5ad41d2112c616, type: 3}
       propertyPath: airAccel
@@ -2639,7 +2639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: dec7cd42960366243b5ad41d2112c616, type: 3}
       propertyPath: swimJumpForce.y
-      value: 30
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 595080057, guid: dec7cd42960366243b5ad41d2112c616, type: 3}
       propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
@@ -3433,6 +3433,7 @@ GameObject:
   - component: {fileID: 2118050890}
   - component: {fileID: 2118050889}
   - component: {fileID: 2118050895}
+  - component: {fileID: 2118050894}
   m_Layer: 0
   m_Name: Platform
   m_TagString: Untagged
@@ -3564,6 +3565,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118050887}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2118050894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118050887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7c20d595b86e49469a68ceb4de86d39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2118050895
 MonoBehaviour:
   m_ObjectHideFlags: 0

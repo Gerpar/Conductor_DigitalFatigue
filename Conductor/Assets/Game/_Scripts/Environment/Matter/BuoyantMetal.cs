@@ -9,16 +9,16 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class BuoyantMetal : BaseMatter
 {
-    [SerializeField]
-    private Vector3 floatForce;
-
-    private bool inWater;
-    private Water medium;
+    // [SerializeField]
+    // private Vector3 floatForce;
+    // 
+    // private bool inWater = false;
+    // private GameObject medium;
 
     void Awake()
     {
         buoyant = true;
-        GetComponent<BoxCollider>().isTrigger = false;
+        // GetComponent<BoxCollider>().isTrigger = false;
     }
 
     // Update is called once per frame
@@ -31,8 +31,31 @@ public class BuoyantMetal : BaseMatter
         // 4) Apply progressively less force as the object reaches the top
     }
 
-    public override void Rise()
-    {
-        base.Rise();
-    }
+    // public override void Rise()
+    // {
+    //     base.Rise();
+    // }
+    // 
+    // private void OnCollisionEnter(Collision collision)
+    // {
+    //     GameObject collidedObj = collision.gameObject;
+    // 
+    //     if (collidedObj.tag == "Water" && !inWater)
+    //     {
+    //         inWater = true;
+    //         medium = collidedObj;
+    //     }
+    //         
+    // }
+    // 
+    // private void OnCollisionExit(Collision collision)
+    // {
+    //     GameObject collidedObj = collision.gameObject;
+    // 
+    //     if (collidedObj.tag == "Water" && inWater)
+    //     {
+    //         inWater = false;
+    //         medium = null;
+    //     }
+    // }
 }
