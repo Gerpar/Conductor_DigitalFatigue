@@ -522,6 +522,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2887317920515250611}
     m_Modifications:
+    - target: {fileID: 5869984389198767035, guid: cdcf044be94e0404483fdc504002fd7c,
+        type: 3}
+      propertyPath: m_Name
+      value: TurretProjectileTrailParticle
+      objectReference: {fileID: 0}
     - target: {fileID: 4301385262895948779, guid: cdcf044be94e0404483fdc504002fd7c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -576,11 +581,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5869984389198767035, guid: cdcf044be94e0404483fdc504002fd7c,
-        type: 3}
-      propertyPath: m_Name
-      value: TurretProjectileTrailParticle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdcf044be94e0404483fdc504002fd7c, type: 3}
