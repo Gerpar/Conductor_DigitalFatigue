@@ -8,7 +8,8 @@ public class TurretController : MonoBehaviour
     [SerializeField] GameObject projectile;
     [SerializeField] Transform firePoint;
 
-    bool turretOnline = true;
+
+    bool turretOnline = false;
 
     public bool TurretState
     {
