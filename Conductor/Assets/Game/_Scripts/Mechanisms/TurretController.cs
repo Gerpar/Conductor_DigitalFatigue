@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class TurretController : MonoBehaviour
 {
+    [Header("Standard Properties")]
     [SerializeField] float fireDelay;
     [SerializeField] GameObject projectile;
     [SerializeField] Transform firePoint;
 
+    [Header("Tracking Properties")]
+    [SerializeField] bool tracking;
+    [SerializeField] float rotationSpeed;
 
+    GameObject playerObj;
     bool turretOnline = false;
+
+    bool playerDetected = false;
 
     public bool TurretState
     {
@@ -23,17 +30,61 @@ public class TurretController : MonoBehaviour
         }
     }
 
-    IEnumerator AutoFire()
+    void Start()
     {
-        while(turretOnline)
+        playerObj = GameObject.FindGameObjectWithTag("Player");
+        StartCoroutine(AutoFire());
+    }
+
+    void Update()
+    {
+        if (playerDetected && turretOnline && tracking)
         {
-            GameObject newProjectile = Instantiate(projectile, firePoint.position, firePoint.rotation, null);
-            yield return new WaitForSeconds(fireDelay);
+            PointTowardsPoint(playerObj.transform.position + (playerObj.GetComponent<Rigidbody>().velocity * Time.deltaTime * Vector3.Distance(transform.position, playerObj.transform.position)));
         }
     }
 
-    void Start()
+    IEnumerator AutoFire()
     {
-        StartCoroutine(AutoFire());
+        while (turretOnline)
+        {
+            if (!tracking)
+            {
+                GameObject newProjectile = Instantiate(projectile, firePoint.position, firePoint.rotation, null);
+                yield return new WaitForSeconds(fireDelay);
+            }
+            else if(playerDetected)
+            {
+                GameObject newProjectile = Instantiate(projectile, firePoint.position, firePoint.rotation, null);
+                yield return new WaitForSeconds(fireDelay);
+            }
+        }
+    }
+
+    void PointTowardsPoint(Vector3 point)
+    {
+        Vector3 direction = (point - transform.position).normalized;
+
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+
+        Debug.Log(lookRotation.z);
+
+        GetComponent<Rigidbody>().transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerDetected = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerDetected = false;
+        }
     }
 }
