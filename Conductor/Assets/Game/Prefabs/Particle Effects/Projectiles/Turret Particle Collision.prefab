@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6895777862978665810}
   - component: {fileID: 6895777862978665811}
   - component: {fileID: 6895777862978665812}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Turret Particle Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3790,7 +3790,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 32311
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
