@@ -35,6 +35,7 @@ public class PlayerMove : MonoBehaviour
 	public Vector3 jumpForce =  new Vector3(0, 13, 0);		//normal jump force
 	public Vector3 secondJumpForce = new Vector3(0, 13, 0); //the force of a 2nd consecutive jump
 	public Vector3 thirdJumpForce = new Vector3(0, 13, 0);	//the force of a 3rd consecutive jump
+    public Vector3 swimJumpForce = new Vector3(0, 13, 0);   //the force of jumping in water
 	public float jumpDelay = 0.1f;							//how fast you need to jump after hitting the ground, to do the next type of jump
 	public float jumpLeniancy = 0.17f;						//how early before hitting the ground you can press jump, and still have it work
 	[HideInInspector]
@@ -42,6 +43,7 @@ public class PlayerMove : MonoBehaviour
 	
 	private int onJump;
 	private bool grounded;
+    private bool inWater;
 	private Transform[] floorCheckers;
 	private Quaternion screenMovementSpace;
 	private float airPressTime, groundedCount, curAccel, curDecel, curRotateSpeed, slope;
@@ -78,6 +80,7 @@ public class PlayerMove : MonoBehaviour
 		//usual setup
 		mainCam = GameObject.FindGameObjectWithTag("MainCamera").transform;
 
+        inWater = false;
 		dealDamage = GetComponent<DealDamage>();
 		characterMotor = GetComponent<CharacterMotor>();
 		rigid = GetComponent<Rigidbody>();
@@ -229,22 +232,30 @@ public class PlayerMove : MonoBehaviour
 			airPressTime = Time.time;
 		
 		//if were on ground within slope limit
-		if (grounded && slope < slopeLimit)
+		if (inWater || (grounded && slope < slopeLimit))
 		{
 			//and we press jump, or we pressed jump justt before hitting the ground
 			if (Input.GetButtonDown ("Jump") || airPressTime + jumpLeniancy > Time.time)
 			{	
-				//increment our jump type if we haven't been on the ground for long
-				onJump = (groundedCount < jumpDelay) ? Mathf.Min(2, onJump + 1) : 0;
-				//execute the correct jump (like in mario64, jumping 3 times quickly will do higher jumps)
-				if (onJump == 0)
-						Jump (jumpForce);
-				else if (onJump == 1)
-						Jump (secondJumpForce);
-				else if (onJump == 2){
-						Jump (thirdJumpForce);
-						onJump --;
-				}
+                if (inWater)
+                {
+                    Jump(swimJumpForce);
+                }
+                else
+                {
+                    //increment our jump type if we haven't been on the ground for long
+                    onJump = (groundedCount < jumpDelay) ? Mathf.Min(2, onJump + 1) : 0;
+                    //execute the correct jump (like in mario64, jumping 3 times quickly will do higher jumps)
+                    if (onJump == 0)
+                        Jump(jumpForce);
+                    else if (onJump == 1)
+                        Jump(secondJumpForce);
+                    else if (onJump == 2)
+                    {
+                        Jump(thirdJumpForce);
+                        onJump--;
+                    }
+                }
 			}
 		}
 	}
@@ -273,5 +284,21 @@ public class PlayerMove : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        GameObject triggeredObj = other.gameObject;
+
+        if (triggeredObj.tag == "Water" && !inWater)
+            inWater = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        GameObject triggeredObj = other.gameObject;
+
+        if (triggeredObj.tag == "Water" && inWater)
+            inWater = false;
     }
 }
