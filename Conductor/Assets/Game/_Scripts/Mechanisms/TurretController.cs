@@ -17,6 +17,7 @@ public class TurretController : MonoBehaviour
     bool turretOnline = false;
 
     bool playerDetected = false;
+    AudioSource src;
 
     public bool TurretState
     {
@@ -33,6 +34,7 @@ public class TurretController : MonoBehaviour
     void Start()
     {
         playerObj = GameObject.FindGameObjectWithTag("Player");
+        src = GetComponent<AudioSource>();
         StartCoroutine(AutoFire());
     }
 
@@ -52,6 +54,7 @@ public class TurretController : MonoBehaviour
             if (!tracking)
             {
                 GameObject newProjectile = Instantiate(projectile, firePoint.position, firePoint.rotation, null);
+
             }
             else if (playerDetected)
             {
