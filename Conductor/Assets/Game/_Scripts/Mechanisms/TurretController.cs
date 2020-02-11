@@ -46,18 +46,19 @@ public class TurretController : MonoBehaviour
 
     IEnumerator AutoFire()
     {
+        yield return new WaitForSeconds(fireDelay);
         while (turretOnline)
         {
             if (!tracking)
             {
                 GameObject newProjectile = Instantiate(projectile, firePoint.position, firePoint.rotation, null);
-                yield return new WaitForSeconds(fireDelay);
             }
-            else if(playerDetected)
+            else if (playerDetected)
             {
                 GameObject newProjectile = Instantiate(projectile, firePoint.position, firePoint.rotation, null);
-                yield return new WaitForSeconds(fireDelay);
             }
+
+            yield return new WaitForSeconds(fireDelay);
         }
     }
 
