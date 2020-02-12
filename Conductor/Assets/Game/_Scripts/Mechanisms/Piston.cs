@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Script created by Gerad paris
+/// <summary>
+/// Controls the piston's extension, and how far it will extend outwards, and in which direction it will move.
+/// </summary>
 public class Piston : MonoBehaviour
 {
     [SerializeField] float pistonMoveSpeed;
@@ -14,8 +18,8 @@ public class Piston : MonoBehaviour
     private Vector3 finalPosition, initialPosition;
     void Start()
     {
-        finalPosition = extensionObject.transform.position + extensionValue;
-        initialPosition = extensionObject.transform.position;
+        finalPosition = extensionObject.transform.position + extensionValue;    // Create a final extension position (Where the piston head will be when fully extended)
+        initialPosition = extensionObject.transform.position;                   // Initial position of the piston head (Fully retracted)
         Debug.Log(gameObject.name + ": " + finalPosition + ", " + initialPosition);
     }
 

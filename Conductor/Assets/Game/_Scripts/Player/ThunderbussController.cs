@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Script created by Gerad paris
+/// <summary>
+/// Controls the aiming of the thunderbuss, and the firing mechanisms behind it.
+/// </summary>
+
 public class ThunderbussController : MonoBehaviour
 {
     [Header("General Properties")] 

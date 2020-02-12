@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Script created by Gerad paris
+/// <summary>
+/// Controls the objects that are attached to the conduit based on the current conduit status. Status and check are only done when an object hits it that has the ActivateConduitOnCollision script attached.
+/// </summary>
+
 public class ConduitControl : MonoBehaviour
 {
     [SerializeField] GameObject[] effectedObjects;
     [SerializeField] Material wireOnMaterial, wireOffMaterial;
     [SerializeField] bool toggleable;
 
-    bool conduitEnabled;    // if the conduit is enabled
+    public bool conduitEnabled;    // if the conduit is enabled
 
     public bool Toggleable
     {
@@ -49,7 +54,7 @@ public class ConduitControl : MonoBehaviour
         UpdateObjects();    // Update the attached objects
     }
 
-    private void UpdateObjects()
+    public void UpdateObjects()
     {
         foreach(GameObject obj in effectedObjects)  // For every object the conduit affects
         {
@@ -117,6 +122,14 @@ public class ConduitControl : MonoBehaviour
                     break;
                 case ObjectEffect.EffectType.BOUNCER_INV:
                     obj.GetComponent<Bouncer>().enabled = !conduitEnabled;
+                    break;
+                // Turrets
+                //--------------------
+                case ObjectEffect.EffectType.TURRET:
+                    obj.GetComponent<TurretController>().TurretState = conduitEnabled;
+                    break;
+                case ObjectEffect.EffectType.TURRET_INV:
+                    obj.GetComponent<TurretController>().TurretState = !conduitEnabled;
                     break;
 
                 // Water Level Change
