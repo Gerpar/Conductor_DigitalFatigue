@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Script created by Gerad paris
+/// <summary>
+/// Acts as the fundimental logic gates dependant on what type it is set as. Takes inputs from two conduits connected to it.
+/// </summary>
+/// 
 public class LogicGate : ConduitControl
 {
     enum GateType { AND, NAND };
