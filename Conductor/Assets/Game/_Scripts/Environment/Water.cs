@@ -29,19 +29,27 @@ public class Water : MonoBehaviour
 	void OnTriggerStay(Collider other)
 	{
 		//get surface position
-		float surface = transform.position.y + GetComponent<Collider>().bounds.extents.y;
-		Rigidbody rigid = other.GetComponent<Rigidbody>();
-		if(rigid)
+		// float surface = transform.position.y + GetComponent<Collider>().bounds.extents.y;
+
+		if(other.TryGetComponent(out Rigidbody rigid))
 		{
-			//get object depth
-			float depth = surface - other.transform.position.y;
-			//if below surface, push object
-			if(depth > 0.4f)
-				rigid.AddForce(force, ForceMode.Force);
-			//if we are near the surface, add less force, this prevents objects from "jittering" up and down on the surface
-			else
-				rigid.AddForce (force * (depth * 2), ForceMode.Force);
-		}
+            float surface = transform.position.y + GetComponent<Collider>().bounds.extents.y; // get surface position
+            float depth = surface - other.transform.position.y; // get object depth
+            Vector3 forceToAdd = Vector3.zero;
+
+            //if below surface, push object
+            if (depth > 0.4f)
+                forceToAdd += force;
+            //if we are near the surface, add less force, this prevents objects from "jittering" up and down on the surface
+            else
+                forceToAdd += force * (depth * 2);
+
+            if (other.TryGetComponent(out BaseMatter matter) && matter.IsBuoyant)
+                forceToAdd += Physics.gravity * -1;
+
+            if (other.tag != "Player")
+                rigid.AddForce(forceToAdd, ForceMode.Force);
+        }
 	}
 	
 	//sets drag on objects entering water
