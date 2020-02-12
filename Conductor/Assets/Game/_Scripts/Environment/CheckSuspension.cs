@@ -8,12 +8,12 @@ using UnityEngine;
 
 public class CheckSuspension : MonoBehaviour
 {
-    private HingeJoint joint;
+    private FixedJoint joint;
 
     // Start is called before the first frame update
     void Awake()
     {
-        joint = GetComponent<HingeJoint>();
+        joint = GetComponent<FixedJoint>();
     }
 
     // Update is called once per frame
