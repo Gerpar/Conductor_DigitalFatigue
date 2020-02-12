@@ -80,6 +80,7 @@ MonoBehaviour:
   wireOnMaterial: {fileID: 0}
   wireOffMaterial: {fileID: 0}
   toggleable: 1
+  conduitEnabled: 0
 --- !u!114 &4028994432979941932
 MonoBehaviour:
   m_ObjectHideFlags: 0

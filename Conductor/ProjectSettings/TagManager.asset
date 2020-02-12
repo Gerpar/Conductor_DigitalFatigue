@@ -15,6 +15,7 @@ TagManager:
   - Conduit
   - BulletBouncer
   - KeepChildAfterDeath
+  - GUI
   layers:
   - Default
   - TransparentFX
