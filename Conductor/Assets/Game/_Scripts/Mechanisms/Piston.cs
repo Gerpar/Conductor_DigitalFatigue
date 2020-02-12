@@ -20,7 +20,6 @@ public class Piston : MonoBehaviour
     {
         finalPosition = extensionObject.transform.position + extensionValue;    // Create a final extension position (Where the piston head will be when fully extended)
         initialPosition = extensionObject.transform.position;                   // Initial position of the piston head (Fully retracted)
-        Debug.Log(gameObject.name + ": " + finalPosition + ", " + initialPosition);
     }
 
     IEnumerator MoveToPosition(Vector3 initialPos, Vector3 newPos, float movespeed)

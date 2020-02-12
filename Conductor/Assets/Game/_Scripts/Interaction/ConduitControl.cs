@@ -23,9 +23,7 @@ public class ConduitControl : MonoBehaviour
     public bool ConduitEnabled
     {
         get { return conduitEnabled; }
-    }
-
-    
+    }    
 
     void Start()
     {
