@@ -14,6 +14,7 @@ public class Water : MonoBehaviour
 	
 	private Dictionary<GameObject, float> dragStore = new Dictionary<GameObject, float>();
 	private Dictionary<GameObject, float> angularStore = new Dictionary<GameObject, float>();
+    private bool changingLevel = false;
 	
 	void Awake()
 	{
@@ -113,4 +114,14 @@ public class Water : MonoBehaviour
 			}
 		}
 	}
+
+    // Raises or lowers the water level to the height of newWaterLevel
+    public void ChangeWaterLevel(float newWaterLevel)
+    {
+        Vector3 newPosition = transform.position;
+
+        // First moves the entire object to newWaterLevel, then lowers it so only the top of the water is positioned at newWaterLevel
+        newPosition.y += (newWaterLevel - transform.position.y) - gameObject.GetComponent<Renderer>().bounds.extents.y;
+        transform.position = newPosition;
+    }
 }

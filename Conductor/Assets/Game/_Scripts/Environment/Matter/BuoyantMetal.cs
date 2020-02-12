@@ -18,6 +18,7 @@ public class BuoyantMetal : BaseMatter
     void Awake()
     {
         buoyant = true;
+        conductive = true;
         // GetComponent<BoxCollider>().isTrigger = false;
     }
 
