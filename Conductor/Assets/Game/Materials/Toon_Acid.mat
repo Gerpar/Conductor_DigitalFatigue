@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Toon_Water
+  m_Name: Toon_Acid
   m_Shader: {fileID: 4800000, guid: c1103953041f23b4eb714a721b197c1f, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -24,8 +24,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Addittionalfoam:
-        m_Texture: {fileID: 2800000, guid: 15785f74fe220d842934585ab738c313, type: 3}
-        m_Scale: {x: 10, y: 10}
+        m_Texture: {fileID: 2800000, guid: e05ab3cb1a1a2c9408483c056eaf1ac0, type: 3}
+        m_Scale: {x: 30, y: 15}
         m_Offset: {x: 70, y: 70}
     - _BumpMap:
         m_Texture: {fileID: 0}
@@ -88,19 +88,19 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _EdgeFoamLevel: -1.35
-    - _EdgeFoamLevelDestination: 47.66
-    - _EdgeFoamPower: 0
+    - _EdgeFoamLevel: 2
+    - _EdgeFoamLevelDestination: 3.21
+    - _EdgeFoamPower: 1
     - _FoamLevel: 3
     - _FoamLevelDestination: 4
-    - _FoamOpacity: 0.35
+    - _FoamOpacity: 0.55
     - _FoamPower: 0.3944446
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
-    - _Noiselevel: 0.0188
+    - _Noiselevel: 0.0695
     - _OcclusionStrength: 1
     - _Opacity: 1
     - _Parallax: 0.02
@@ -108,11 +108,11 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WaterDepth: 5.65
-    - _WaterOpacity: 0.021
+    - _WaterDepth: 8.76
+    - _WaterOpacity: 0
     - _WaterOrientation: 0
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _WaterColor: {r: 0.49265665, g: 0.8113208, b: 0.23344605, a: 0.65882355}
+    - _WaterColor: {r: 0.6762638, g: 0.71440434, b: 0.8584906, a: 0.65882355}
