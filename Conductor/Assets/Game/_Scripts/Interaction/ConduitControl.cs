@@ -109,6 +109,7 @@ public class ConduitControl : MonoBehaviour
                         gate.InB = conduitEnabled;
                     }
                     break;
+
                 // Bouncers
                 //--------------------
                 case ObjectEffect.EffectType.BOUNCER:
@@ -124,6 +125,12 @@ public class ConduitControl : MonoBehaviour
                     break;
                 case ObjectEffect.EffectType.TURRET_INV:
                     obj.GetComponent<TurretController>().TurretState = !conduitEnabled;
+
+                // Water Level Change
+                //--------------------
+                case ObjectEffect.EffectType.WATER_LEVEL:
+                    WaterLevel level = obj.GetComponent<WaterLevel>();
+                    level.waterBody.ChangeWaterLevel(level.waterHeight);
                     break;
             }
         }

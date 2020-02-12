@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeavyMetal : MonoBehaviour
+// Robert Thomas
+
+[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(Rigidbody))]
+public class HeavyMetal : BaseMatter
 {
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        buoyant = false;
+        conductive = true;
     }
 
     // Update is called once per frame
