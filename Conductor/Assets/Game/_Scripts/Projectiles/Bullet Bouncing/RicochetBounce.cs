@@ -20,61 +20,65 @@ public class RicochetBounce : MonoBehaviour
         Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
 
-        if(Physics.Raycast(ray, out hit, Time.deltaTime * gameObject.GetComponent<ProjectilePropulsion>().projectileVelocity + 0.5f, collisionMask))
+        if (Physics.Raycast(ray, out hit, Time.deltaTime * gameObject.GetComponent<ProjectilePropulsion>().projectileVelocity + 0.5f, collisionMask))
         {
-            if(ray.direction.x > 0.5)   // Going Right
-            {
-                if(hit.normal.x <= -0.5 && hit.normal.y <= -0.5)  // Top right bouncer
-                {
-                    transform.eulerAngles = new Vector3(90, transform.eulerAngles.y, 0);    // Go down
-                }
-                else if (hit.normal.x <= -0.5 && hit.normal.y >= 0.5)  // Bot right bouncer
-                {
-                    transform.eulerAngles = new Vector3(-90, transform.eulerAngles.y, 0);    // Go up
-                }
-            }
-            else if(ray.direction.x < -0.5) // Going Left
-            {
-                if (hit.normal.x >= 0.5 && hit.normal.y <= 0.5)  // Top left bouncer
-                {
-                    transform.eulerAngles = new Vector3(90, transform.eulerAngles.y, 0);    // Go down
-                }
-                else if (hit.normal.x >= 0.5 && hit.normal.y >= 0.5)  // Bot left bouncer
-                {
-                    transform.eulerAngles = new Vector3(-90, transform.eulerAngles.y, 0);    // Go up
-                }
-            }
-            else if(ray.direction.y > 0.5)  // Going up
+            Debug.Log("Ray Direction: " + ray.direction);
+            Debug.Log("Hit Normal:    " + hit.normal.x);
+
+            float rotationVal = transform.eulerAngles.y;
+            float absoluteRotationY = rotationVal == 270 ? 90 : rotationVal;    // Make sure that the bouncer workes regardles of what direction the player was facing.
+
+            if (ray.direction.x > 0.5)   // Going Right
             {
                 if (hit.normal.x <= -0.5 && hit.normal.y <= -0.5)  // Top right bouncer
                 {
-                    transform.eulerAngles = new Vector3(-180, transform.eulerAngles.y, 0);    // Go right
+                    transform.eulerAngles = new Vector3(90, absoluteRotationY, 0);    // Go down
                 }
-                else if (hit.normal.x >= 0.5 && hit.normal.y <= 0.5)  // Top left bouncer
+                else if (hit.normal.x <= -0.5 && hit.normal.y >= 0.5)  // Bot right bouncer
                 {
-                    transform.eulerAngles = new Vector3(180, transform.eulerAngles.y, 0);  // Go left
+                    transform.eulerAngles = new Vector3(-90, absoluteRotationY, 0);    // Go up
                 }
             }
-            else if(ray.direction.y < -0.5) // Going down
+            else if (ray.direction.x < -0.5) // Going Left
             {
-                if (hit.normal.x <= -0.5 && hit.normal.y >= 0.5)  // Bot right bouncer
+                if (hit.normal.x >= 0.5 && hit.normal.y <= 0.5)  // Top left bouncer
                 {
-                    transform.eulerAngles = new Vector3(180, transform.eulerAngles.y, 0);  // Go left
+                    transform.eulerAngles = new Vector3(90, absoluteRotationY, 0);    // Go down
                 }
                 else if (hit.normal.x >= 0.5 && hit.normal.y >= 0.5)  // Bot left bouncer
                 {
-                    transform.eulerAngles = new Vector3(-180, transform.eulerAngles.y, 0);    // Go right
+                    transform.eulerAngles = new Vector3(-90, absoluteRotationY, 0);    // Go up
+                }
+            }
+            else if (ray.direction.y > 0.5)  // Going up
+            {
+                if (hit.normal.x <= -0.5 && hit.normal.y <= -0.5)  // Top right bouncer
+                {
+                    transform.eulerAngles = new Vector3(180, absoluteRotationY, 0);  // Go left
+                }
+                else if (hit.normal.x >= 0.5 && hit.normal.y <= 0.5)  // Top left bouncer
+                {
+                    transform.eulerAngles = new Vector3(0, absoluteRotationY, 0);    // Go right
+                }
+            }
+            else if (ray.direction.y < -0.5) // Going down
+            {
+                if (hit.normal.x <= -0.5 && hit.normal.y >= 0.5)  // Bot right bouncer
+                {
+                    transform.eulerAngles = new Vector3(180, absoluteRotationY, 0);  // Go left
+                }
+                else if (hit.normal.x >= 0.5 && hit.normal.y >= 0.5)  // Bot left bouncer
+                {
+                    transform.eulerAngles = new Vector3(-180, absoluteRotationY, 0);    // Go right
                 }
             }
 
             rb.velocity = transform.forward * rb.velocity.magnitude;
-
-            //Debug.Log("Initial angle: " + transform.eulerAngles);
         }
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(!collision.gameObject.CompareTag("BulletBouncer"))
+        if (!collision.gameObject.CompareTag("BulletBouncer"))
         {
             foreach (Transform child in transform)
             {

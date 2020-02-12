@@ -19,9 +19,11 @@ public class TurretController : MonoBehaviour
     [Header("Tracking Properties")]
     [SerializeField] bool tracking;
     [SerializeField] float rotationSpeed;
+    [SerializeField] GameObject detectionZone;
 
     GameObject playerObj;
     bool turretOnline = false;
+    PlayerDetection detectionScript;
 
     bool playerDetected = false;
     AudioSource src;
@@ -48,6 +50,8 @@ public class TurretController : MonoBehaviour
     {
         playerObj = GameObject.FindGameObjectWithTag("Player"); // Find the player object
         src = GetComponent<AudioSource>();                      // Get audio source
+        detectionScript = detectionZone.GetComponent<PlayerDetection>();
+        detectionZone.transform.parent = null;                  // Make sure detection zone doesn't move with parent
     }
 
     void Update()
@@ -55,6 +59,18 @@ public class TurretController : MonoBehaviour
         if (playerDetected && turretOnline && tracking)
         {
             PointTowardsPoint(playerObj.transform.position + (playerObj.GetComponent<Rigidbody>().velocity * Time.deltaTime * Vector3.Distance(transform.position, playerObj.transform.position))); // Aim ahead of the player's movement
+        }
+
+        if (tracking && turretOnline && !coroutineStarted && detectionScript.playerDetected)
+        {
+            StartCoroutine(AutoFire());
+            playerDetected = true;
+        }
+        else if(!detectionScript.playerDetected)
+        {
+            StopAllCoroutines();
+            playerDetected = false;
+            coroutineStarted = false;
         }
     }
 
@@ -66,7 +82,7 @@ public class TurretController : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         src.PlayOneShot(detectionSound);
 
-        yield return new WaitForSeconds(fireDelay);         // Wait one shot before firing, gives turret time to aim
+        yield return new WaitForSeconds(0.5f);         // Wait half a second to give the player time to get out of the way
         while (turretOnline)
         {
             if (!tracking)  // If turret isn't tracking, fire a projectile
@@ -92,32 +108,5 @@ public class TurretController : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(direction);           // Create a quaternion for the new look rotation
 
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);  // SLerp towards the new look position from the current rotation.
-    }
-
-    // Detection triggers, pretty self explanitory.
-    private void OnTriggerStay(Collider other)
-    {
-        if (tracking && turretOnline && !coroutineStarted)
-        {
-            if (other.CompareTag("Player"))
-            {
-                
-                StartCoroutine(AutoFire());
-                playerDetected = true;
-            }
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (tracking)
-        {
-            if (other.CompareTag("Player"))
-            {
-                StopAllCoroutines();
-                playerDetected = false;
-                coroutineStarted = false;
-            }
-        }
     }
 }
