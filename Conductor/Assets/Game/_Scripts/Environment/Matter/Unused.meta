@@ -1,12 +1,7 @@
 fileFormatVersion: 2
-<<<<<<< HEAD:Conductor/Assets/Game/Prefabs/Acid_Volume_02 (1).prefab.meta
-guid: b3b4a1f46125bd74981a24c116c89b68
-PrefabImporter:
-=======
-guid: 35beaa25bfba69f4ab36b77863ed8375
+guid: e4e52161ff40281499db70a58764fb12
 folderAsset: yes
 DefaultImporter:
->>>>>>> Programming-Branch_Rob:Conductor/Assets/Game/_Scripts/Environment/Matter/Unused.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
