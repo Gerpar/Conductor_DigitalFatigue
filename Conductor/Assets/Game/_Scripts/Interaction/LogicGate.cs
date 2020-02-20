@@ -85,6 +85,6 @@ public class LogicGate : ConduitControl
                 break;
         }
 
-        UpdateObjects();    // Update the objects
+        UpdateAllObjects();    // Update the objects
     }
 }

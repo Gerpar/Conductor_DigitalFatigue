@@ -145,7 +145,7 @@ public class ConduitControl : MonoBehaviour
     // }
 
     // Activates every object connected to this conduit
-    private void UpdateAllObjects()
+    protected void UpdateAllObjects()
     {
         foreach (GameObject go in effectedObjects)
         {
@@ -155,7 +155,7 @@ public class ConduitControl : MonoBehaviour
 
 
     // Activates a specific object connect to this conduit
-    private void UpdateObject(GameObject obj)
+    protected void UpdateObject(GameObject obj)
     {
         ObjectEffect.EffectType effect = obj.GetComponent<ObjectEffect>().effect;   // Get the effect that the conduit should have on the objectd
 
