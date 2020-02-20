@@ -14,6 +14,10 @@ public class LogicGate : ConduitControl
     [SerializeField] GateType gateType;
     public GameObject conduitA, conduitB;
 
+    Material gateOnMat, gateOffMat;
+
+    Renderer rend;
+
     private bool inA, inB;
 
     public bool InA
@@ -43,6 +47,14 @@ public class LogicGate : ConduitControl
             return conduitEnabled;
         }
     }
+
+    private void Start()
+    {
+        rend = GetComponent<Renderer>();
+        gateOnMat = Resources.Load("Materials/Wiring/LogicGateOn") as Material;
+        gateOffMat = Resources.Load("Materials/Wiring/LogicGateOff") as Material;
+    }
+
     void CheckOutput()
     {
         switch(gateType)
@@ -51,20 +63,24 @@ public class LogicGate : ConduitControl
                 if(inA && inB)  // In input A & B Are active
                 {
                     conduitEnabled = true;
+                    rend.material = gateOnMat;
                 }
                 else
                 {
                     conduitEnabled = false;
+                    rend.material = gateOffMat;
                 }
                 break;
             case GateType.NAND:
                 if(!(inA && inB))   // If input A & B Are not active
                 {
                     conduitEnabled = true;
+                    rend.material = gateOnMat;
                 }
                 else
                 {
                     conduitEnabled = false;
+                    rend.material = gateOffMat;
                 }
                 break;
         }

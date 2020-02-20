@@ -10,10 +10,10 @@ using UnityEngine;
 public class ConduitControl : MonoBehaviour
 {
     [SerializeField] GameObject[] effectedObjects;
-    [SerializeField] Material wireOnMaterial, wireOffMaterial;
     [SerializeField] bool toggleable;
 
     public bool conduitEnabled;    // if the conduit is enabled
+    Material wireOnMaterial, wireOffMaterial;
 
     public bool Toggleable
     {
@@ -27,6 +27,9 @@ public class ConduitControl : MonoBehaviour
 
     void Start()
     {
+        wireOnMaterial = Resources.Load("Materials/Wiring/WireOn") as Material;
+        wireOffMaterial = Resources.Load("Materials/Wiring/WireOff") as Material;
+
         foreach(GameObject obj in effectedObjects)  // Check each object in the array
         {
             ObjectEffect effectObj = obj.GetComponent<ObjectEffect>();
