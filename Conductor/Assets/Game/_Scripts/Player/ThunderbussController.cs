@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Script created by Gerad paris
+
 /// <summary>
 /// Controls the aiming of the thunderbuss, and the firing mechanisms behind it.
 /// </summary>
 
 public class ThunderbussController : MonoBehaviour
 {
+    // Note from Jared R: A few values have been made public. Trust me dude. Totally didn't add a stupid debug menu that changes stuff.
     [Header("General Properties")] 
     [SerializeField] Transform thunderbussHolderTransform;
     [SerializeField] Camera camera;
@@ -18,11 +20,11 @@ public class ThunderbussController : MonoBehaviour
 
     [Header("Projectile properties")]
     [SerializeField] GameObject projectilePrefab;
-    [SerializeField] float chargeTime;   // Seconds it takes for thunderbuss to charge a shot
+    [SerializeField] public float chargeTime;   // Seconds it takes for thunderbuss to charge a shot
 
     [Header("Audio")]
-    [SerializeField] AudioClip fireSound;
-    [SerializeField] AudioClip chargeSound;
+    [SerializeField] public AudioClip fireSound;
+    [SerializeField] public AudioClip chargeSound;
 
     private Vector3 mousePosInWorld;    // Keeps track of the mouse position in the world
     private float timeToFire;           // Keeps track of what time the thunderbuss can fire again

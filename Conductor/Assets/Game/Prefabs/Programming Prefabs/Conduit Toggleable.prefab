@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2294846405530581518}
   - component: {fileID: 2294846405530581517}
   - component: {fileID: 2294846405530581516}
-  - component: {fileID: 2294846405530581515}
   - component: {fileID: 2294846405530581514}
+  - component: {fileID: 4879814227451558362}
   m_Layer: 0
   m_Name: Conduit Toggleable
   m_TagString: Conduit
@@ -417,20 +417,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!64 &2294846405530581515
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2294846405530581513}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!114 &2294846405530581514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,6 +431,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effectedObjects:
   - {fileID: 0}
-  wireOnMaterial: {fileID: 2100000, guid: f49d48511617a72469575ad43e6dd3f9, type: 2}
-  wireOffMaterial: {fileID: 2100000, guid: 19f0303e24ad63b4594c7a0dbb64b754, type: 2}
   toggleable: 1
+  conduitEnabled: 0
+--- !u!65 &4879814227451558362
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2294846405530581513}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 1, z: 1}
+  m_Center: {x: 0.6, y: 0.5, z: -0.5}

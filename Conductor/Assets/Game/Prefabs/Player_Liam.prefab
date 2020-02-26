@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 8200000}
   - component: {fileID: 6546892}
   - component: {fileID: 1892063457}
+  - component: {fileID: 6835887347020818601}
   m_Layer: 0
   m_Name: Player_Liam
   m_TagString: Player
@@ -352,6 +353,24 @@ MonoBehaviour:
   chargeTime: 1
   fireSound: {fileID: 8300000, guid: 77a3a806974b2534bac8d54d6bd7432f, type: 3}
   chargeSound: {fileID: 8300000, guid: 50a6641f3d9d3564898838f05d715993, type: 3}
+--- !u!114 &6835887347020818601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aef9bb21732bf84f81cbd15027d5ea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CheatsEnabled: 0
+  ShootJobel: {fileID: 8300000, guid: f9064e99174d55244b77eef53fa8db10, type: 3}
+  ChargeJobel: {fileID: 8300000, guid: a41664222282ccf49bb9e3ebc6b0b33e, type: 3}
+  ImpactJobel: {fileID: 8300000, guid: 9160f989dab558e48886886661410a64, type: 3}
+  JumpJobel: {fileID: 8300000, guid: 08a4653ac212e2042acd5fcc05837c00, type: 3}
+  DeathJobel: {fileID: 8300000, guid: fc977a84c2c0449459da27c25af0d926, type: 3}
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0
