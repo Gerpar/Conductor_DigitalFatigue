@@ -42,6 +42,7 @@ public class ConduitControl : MonoBehaviour
             // Update all objects except water to its default states
             else if (effectObj.effect != ObjectEffect.EffectType.WATER_LEVEL)
             {
+                Debug.Log(obj.name);
                 UpdateObject(obj);
             }
         }
