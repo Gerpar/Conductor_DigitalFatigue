@@ -17,7 +17,7 @@ public class TurretController : MonoBehaviour
     [SerializeField] AudioClip detectionSound;
 
     [Header("Tracking Properties")]
-    [SerializeField] bool tracking;
+    [SerializeField] bool tracking = false;
     [SerializeField] float rotationSpeed;
     [SerializeField] GameObject detectionZone;
 
@@ -29,6 +29,14 @@ public class TurretController : MonoBehaviour
     AudioSource src;
     bool coroutineStarted = false;
 
+    void Start()
+    {
+        playerObj = GameObject.FindGameObjectWithTag("Player"); // Find the player object
+        src = GetComponent<AudioSource>();                      // Get audio source
+        detectionScript = detectionZone.GetComponent<PlayerDetection>();
+        detectionZone.transform.parent = null;                  // Make sure detection zone doesn't move with parent
+    }
+
     public bool TurretState // Sets the state of the turret, and activates / deactivates coroutines based on the value passed
     {
         set
@@ -36,6 +44,7 @@ public class TurretController : MonoBehaviour
             turretOnline = value;
             if (turretOnline && !tracking)
             {
+                StopAllCoroutines();
                 StartCoroutine(AutoFire());
             }
             else
@@ -44,14 +53,6 @@ public class TurretController : MonoBehaviour
                 coroutineStarted = false;
             }
         }
-    }
-
-    void Start()
-    {
-        playerObj = GameObject.FindGameObjectWithTag("Player"); // Find the player object
-        src = GetComponent<AudioSource>();                      // Get audio source
-        detectionScript = detectionZone.GetComponent<PlayerDetection>();
-        detectionZone.transform.parent = null;                  // Make sure detection zone doesn't move with parent
     }
 
     void Update()

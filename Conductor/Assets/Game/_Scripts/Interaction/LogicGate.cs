@@ -15,7 +15,6 @@ public class LogicGate : ConduitControl
     public GameObject conduitA, conduitB;
 
     Material gateOnMat, gateOffMat;
-
     Renderer rend;
 
     private bool inA, inB;
@@ -57,34 +56,48 @@ public class LogicGate : ConduitControl
 
     void CheckOutput()
     {
+
         switch(gateType)
         {
             case GateType.AND:
                 if(inA && inB)  // In input A & B Are active
                 {
                     conduitEnabled = true;
-                    rend.material = gateOnMat;
+                    if(gateOnMat != null)
+                    {
+                        rend.material = gateOnMat;
+                    }
                 }
                 else
                 {
                     conduitEnabled = false;
-                    rend.material = gateOffMat;
+                    if (gateOffMat != null)
+                    {
+                        rend.material = gateOffMat;
+                    }
                 }
                 break;
             case GateType.NAND:
                 if(!(inA && inB))   // If input A & B Are not active
                 {
                     conduitEnabled = true;
-                    rend.material = gateOnMat;
+                    if (gateOnMat != null)
+                    {
+                        rend.material = gateOnMat;
+                    }
                 }
                 else
                 {
                     conduitEnabled = false;
-                    rend.material = gateOffMat;
+                    if(gateOffMat != null)
+                    {
+                        rend.material = gateOffMat;
+                    }
                 }
                 break;
         }
 
         //UpdateObjects();    // Update the objects
+        UpdateAllObjects();
     }
 }

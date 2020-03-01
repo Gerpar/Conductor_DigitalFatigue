@@ -32,6 +32,7 @@ public class ConduitControl : MonoBehaviour
 
         foreach(GameObject obj in effectedObjects)  // Check each object in the array
         {
+            Debug.Log(this + ": " + obj);
             ObjectEffect effectObj = obj.GetComponent<ObjectEffect>();
 
             if (effectObj == null)    // If object doesn't have an effect
@@ -42,7 +43,6 @@ public class ConduitControl : MonoBehaviour
             // Update all objects except water to its default states
             else if (effectObj.effect != ObjectEffect.EffectType.WATER_LEVEL)
             {
-                Debug.Log(obj.name);
                 UpdateObject(obj);
             }
         }
@@ -146,7 +146,7 @@ public class ConduitControl : MonoBehaviour
     // }
 
     // Activates every object connected to this conduit
-    private void UpdateAllObjects()
+    protected void UpdateAllObjects()
     {
         foreach (GameObject go in effectedObjects)
         {
@@ -156,7 +156,7 @@ public class ConduitControl : MonoBehaviour
 
 
     // Activates a specific object connect to this conduit
-    private void UpdateObject(GameObject obj)
+    protected void UpdateObject(GameObject obj)
     {
         ObjectEffect.EffectType effect = obj.GetComponent<ObjectEffect>().effect;   // Get the effect that the conduit should have on the objectd
 
@@ -222,6 +222,15 @@ public class ConduitControl : MonoBehaviour
                 break;
             case ObjectEffect.EffectType.BOUNCER_INV:
                 obj.GetComponent<Bouncer>().enabled = !conduitEnabled;
+                break;
+
+            // TOrrets
+            //--------------------
+            case ObjectEffect.EffectType.TURRET:
+                obj.GetComponent<TurretController>().TurretState = conduitEnabled;
+                break;
+            case ObjectEffect.EffectType.TURRET_INV:
+                obj.GetComponent<TurretController>().TurretState = !conduitEnabled;
                 break;
 
             // Water Level Change
