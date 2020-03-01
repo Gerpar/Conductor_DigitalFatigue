@@ -24,7 +24,6 @@ public class Piston : MonoBehaviour
 
     IEnumerator MoveToPosition(Vector3 initialPos, Vector3 newPos, float movespeed)
     {
-        isMoving = true;
         while(Vector3.Distance(extensionObject.transform.position, newPos) > 0.05f)
         {
             extensionObject.GetComponent<Rigidbody>().MovePosition(Vector3.MoveTowards(extensionObject.transform.position, newPos, pistonMoveSpeed * Time.deltaTime)); // Move towards the end point over time
@@ -36,7 +35,6 @@ public class Piston : MonoBehaviour
 
     IEnumerator StayAtPosition(Vector3 position)
     {
-        isMoving = false;
         while(true)
         {
             extensionObject.transform.position = position;
@@ -47,18 +45,12 @@ public class Piston : MonoBehaviour
     public void Extend()
     {
         StopAllCoroutines();
-        if(!isMoving)
-        {
-            StartCoroutine(MoveToPosition(initialPosition, finalPosition, pistonMoveSpeed));
-        }
+        StartCoroutine(MoveToPosition(initialPosition, finalPosition, pistonMoveSpeed));
     }
 
     public void Retract()
     {
         StopAllCoroutines();
-        if(!isMoving)
-        {
-            StartCoroutine(MoveToPosition(finalPosition, initialPosition, pistonMoveSpeed));
-        }
+        StartCoroutine(MoveToPosition(finalPosition, initialPosition, pistonMoveSpeed));
     }
 }
