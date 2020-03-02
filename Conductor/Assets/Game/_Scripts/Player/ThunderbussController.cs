@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // Script created by Gerad paris
 
@@ -16,6 +17,7 @@ public class ThunderbussController : MonoBehaviour
     [SerializeField] Camera camera;
     [SerializeField] Transform firePoint;
     [SerializeField] GameObject crosshair;
+    [SerializeField] Image crosshairCharging;
     [SerializeField] GameObject chargeTrail;
 
     [Header("Projectile properties")]
@@ -71,6 +73,9 @@ public class ThunderbussController : MonoBehaviour
     void Charging()
     {
         currentCharge += Time.deltaTime; // Add deltatime to time charged
+
+        crosshairCharging.fillAmount = currentCharge / chargeTime;  // Update UI
+
         if(currentCharge >= chargeTime && !chargeSoundPlayed)   // If weapon is fully charged
         {
             src.PlayOneShot(chargeSound);   // Play sound
@@ -89,5 +94,6 @@ public class ThunderbussController : MonoBehaviour
             chargeTrail.GetComponent<TrailRenderer>().emitting = false;
         }
         currentCharge = 0;  // Reset charge
+        crosshairCharging.fillAmount = 0;
     }
 }
