@@ -151,15 +151,15 @@ MonoBehaviour:
   camX: 0
   camY: 202
   camZ: 0
-  accel: 90
-  airAccel: 5
+  accel: 140
+  airAccel: 4
   decel: 7.6
   airDecel: 0.5
   rotateSpeed: 3
   airRotateSpeed: 0.66
-  maxSpeed: 40
+  maxSpeed: 35
   slopeLimit: 70
-  slideAmount: 25
+  slideAmount: 15
   movingPlatformFriction: 7
   jumpForce: {x: 0, y: 30, z: 0}
   secondJumpForce: {x: 0, y: 0, z: 0}
@@ -327,7 +327,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 2887317920515250608, guid: 314a12f5e33a56b40b503b106b890a83,
     type: 3}
   chargeTime: 0.8
-  fireSound: {fileID: 8300000, guid: 77a3a806974b2534bac8d54d6bd7432f, type: 3}
+  fireSound: {fileID: 8300000, guid: 4eeb24172f9616242ad41015046f7fdb, type: 3}
   chargeSound: {fileID: 8300000, guid: 50a6641f3d9d3564898838f05d715993, type: 3}
 --- !u!114 &6835887347020818601
 MonoBehaviour:
@@ -1185,11 +1185,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.4
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.47300005
+      value: -0.47299957
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
       propertyPath: m_LocalPosition.z
