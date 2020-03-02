@@ -18,38 +18,51 @@ public class Water : MonoBehaviour
 	
 	void Awake()
 	{
+        BoxCollider collide = GetComponent<BoxCollider>();
+
 		if(tag != "Water")
 		{
 			tag = "Water";
 			Debug.LogWarning("'Water' script attached to an object not tagged 'Water', it been assigned the tag 'Water'", transform);
 		}
-		GetComponent<Collider>().isTrigger = true;
+
+        collide.isTrigger = true;
+        collide.center = Vector3.zero;
+        collide.size = new Vector3(1, 1, 1);
 	}
 	
 	//apply buoyancy
 	void OnTriggerStay(Collider other)
 	{
-		//get surface position
-		// float surface = transform.position.y + GetComponent<Collider>().bounds.extents.y;
-
-		if(other.TryGetComponent(out Rigidbody rigid))
+		if(other.tag != "Player" && other.TryGetComponent(out Rigidbody rigid))
 		{
             float surface = transform.position.y + GetComponent<Collider>().bounds.extents.y; // get surface position
             float depth = surface - other.transform.position.y; // get object depth
             Vector3 forceToAdd = Vector3.zero;
 
-            //if below surface, push object
-            if (depth > 0.4f)
-                forceToAdd += force;
-            //if we are near the surface, add less force, this prevents objects from "jittering" up and down on the surface
-            else
-                forceToAdd += force * (depth * 2);
-
             if (other.TryGetComponent(out BaseMatter matter) && matter.IsBuoyant)
-                forceToAdd += Physics.gravity * -1;
+            {
+                forceToAdd += Physics.gravity * rigid.mass * -1;
+                // forceToAdd += ;
+            }
+            else
+            {
+                forceToAdd += (Physics.gravity * rigid.mass * -1) / 2;
+            }
 
-            if (other.tag != "Player")
-                rigid.AddForce(forceToAdd, ForceMode.Force);
+            rigid.AddForce(forceToAdd, ForceMode.Force);
+
+            // //if below surface, push object
+            // if (depth > 0.4f)
+            //     forceToAdd += force;
+            // //if we are near the surface, add less force, this prevents objects from "jittering" up and down on the surface
+            // else
+            //     forceToAdd += force * (depth * 2);
+            // 
+            // if (other.TryGetComponent(out BaseMatter matter) && matter.IsBuoyant)
+            //     forceToAdd += Physics.gravity * -1;
+            // 
+            // rigid.AddForce(forceToAdd, ForceMode.Force);
         }
 	}
 	
