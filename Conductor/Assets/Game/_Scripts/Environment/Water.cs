@@ -37,13 +37,14 @@ public class Water : MonoBehaviour
 		if(other.tag != "Player" && other.TryGetComponent(out Rigidbody rigid))
 		{
             float surface = transform.position.y + GetComponent<Collider>().bounds.extents.y; // get surface position
+            float floor = transform.position.y - GetComponent<Collider>().bounds.extents.y;
             float depth = surface - other.transform.position.y; // get object depth
             Vector3 forceToAdd = Vector3.zero;
 
             if (other.TryGetComponent(out BaseMatter matter) && matter.IsBuoyant)
             {
                 forceToAdd += Physics.gravity * rigid.mass * -1;
-                // forceToAdd += ;
+                forceToAdd += force * ((depth - surface) / (floor - surface));
             }
             else
             {
@@ -131,10 +132,15 @@ public class Water : MonoBehaviour
     // Raises or lowers the water level to the height of newWaterLevel
     public void ChangeWaterLevel(float newWaterLevel)
     {
-        Vector3 newPosition = transform.position;
+        float waterMin = transform.position.y - gameObject.GetComponent<Renderer>().bounds.extents.y;
 
-        // First moves the entire object to newWaterLevel, then lowers it so only the top of the water is positioned at newWaterLevel
-        newPosition.y += (newWaterLevel - transform.position.y) - gameObject.GetComponent<Renderer>().bounds.extents.y;
-        transform.position = newPosition;
+        transform.position = new Vector3(transform.position.x, (newWaterLevel + waterMin) / 2, transform.position.z);
+        transform.localScale= new Vector3(transform.localScale.x, newWaterLevel - waterMin, transform.localScale.z);
+
+        // Vector3 newPosition = transform.position;
+        // 
+        // // First moves the entire object to newWaterLevel, then lowers it so only the top of the water is positioned at newWaterLevel
+        // newPosition.y += (newWaterLevel - transform.position.y) - gameObject.GetComponent<Renderer>().bounds.extents.y;
+        // transform.position = newPosition;
     }
 }

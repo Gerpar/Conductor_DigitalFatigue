@@ -220,7 +220,7 @@ public class ConduitControl : MonoBehaviour
                 obj.GetComponent<Bouncer>().Enabled = conduitEnabled;
                 break;
             case ObjectEffect.EffectType.BOUNCER_INV:
-                obj.GetComponent<Bouncer>().enabled = !conduitEnabled;
+                obj.GetComponent<Bouncer>().Enabled = !conduitEnabled;
                 break;
 
             // Water Level Change
