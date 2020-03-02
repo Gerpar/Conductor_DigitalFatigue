@@ -62,7 +62,7 @@ public class TurretController : MonoBehaviour
             PointTowardsPoint(playerObj.transform.position + (playerObj.GetComponent<Rigidbody>().velocity * Time.deltaTime * Vector3.Distance(transform.position, playerObj.transform.position))); // Aim ahead of the player's movement
         }
 
-        if (tracking && turretOnline && !coroutineStarted && detectionScript.playerDetected)
+        if (turretOnline && !coroutineStarted && detectionScript.playerDetected)
         {
             StartCoroutine(AutoFire());
             playerDetected = true;
