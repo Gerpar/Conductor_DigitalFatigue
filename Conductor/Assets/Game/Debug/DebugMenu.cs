@@ -25,6 +25,7 @@ public class DebugMenu : MonoBehaviour
     private int timescale = 1;
     private float shotdelay = 0.8f;
     private float scaleincrement = 0.5f;
+    private float jumpincrement = 1.0f;
 
     void Update()
     {
@@ -136,11 +137,31 @@ public class DebugMenu : MonoBehaviour
             }
 
             //----------------------------------------------------------
-            // Exit menu
-            if (GUI.Button(new Rect(40, 320, 200, 30), "Close Debug Menu"))
+            // Cheat 06 - J U M P
+            GUI.Box(new Rect(80, 320, 120, 30), "Jump Force = " + gameObject.GetComponent<PlayerMove>().jumpForce.y);
+
+            if (GUI.Button(new Rect(210, 320, 30, 30), "+"))
             {
-                CheatsEnabled = false;
+                if (gameObject.GetComponent<PlayerMove>().jumpForce.y < 120.0f)
+                {
+                    Vector3 newForce = gameObject.GetComponent<PlayerMove>().jumpForce;
+                    newForce.y += jumpincrement;
+
+                    gameObject.GetComponent<PlayerMove>().jumpForce = newForce;
+                }
+
             }
+            if (GUI.Button(new Rect(40, 320, 30, 30), "-"))
+            {
+                if (gameObject.GetComponent<PlayerMove>().jumpForce.y > 0.0f)
+                {
+                    Vector3 newForce = gameObject.GetComponent<PlayerMove>().jumpForce;
+                    newForce.y -= jumpincrement;
+
+                    gameObject.GetComponent<PlayerMove>().jumpForce = newForce;
+                }
+            }
+
         }
     }
 }
