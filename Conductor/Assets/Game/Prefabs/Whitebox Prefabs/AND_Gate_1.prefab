@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f4867c52594509e43b83512737bfa8de, type: 2}
+  - {fileID: 2100000, guid: 3ca863d37ec437a4b818966e2be350a4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,16 +106,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff7fee96241a1ad47a3394a220e5abcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gateType: 0
   effectedObjects:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  toggleable: 0
+  conduitEnabled: 0
+  gateType: 0
   conduitA: {fileID: 0}
   conduitB: {fileID: 0}
-  wireOnMaterial: {fileID: 0}
-  wireOffMaterial: {fileID: 0}
 --- !u!114 &674162085577302228
 MonoBehaviour:
   m_ObjectHideFlags: 0
