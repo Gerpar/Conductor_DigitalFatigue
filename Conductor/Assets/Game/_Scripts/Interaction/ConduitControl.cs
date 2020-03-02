@@ -32,7 +32,7 @@ public class ConduitControl : MonoBehaviour
 
         foreach(GameObject obj in effectedObjects)  // Check each object in the array
         {
-            Debug.Log(this + ": " + obj);
+            //Debug.Log(this + ": " + obj);
             ObjectEffect effectObj = obj.GetComponent<ObjectEffect>();
 
             if (effectObj == null)    // If object doesn't have an effect
