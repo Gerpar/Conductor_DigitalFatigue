@@ -102,4 +102,31 @@ public class RicochetBounce : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Water"))
+        {
+            foreach (Transform child in transform)
+            {
+                if (child.gameObject.CompareTag("KeepChildAfterDeath"))
+                {
+                    child.transform.SetParent(null);
+                    if (child.gameObject.GetComponent<ParticleSystem>())
+                    {
+                        child.gameObject.GetComponent<ParticleSystem>().Stop();
+                    }
+                    if (child.gameObject.GetComponent<TrailRenderer>())
+                    {
+                        child.gameObject.GetComponent<TrailRenderer>().emitting = false;
+                    }
+                }
+                Destroy(child.gameObject, 5.0f);
+            }
+
+            GameObject newParticles = Instantiate(collisionParticles, transform.position, transform.rotation, null);
+            Destroy(newParticles, 2.0f);
+            Destroy(gameObject);
+        }
+    }
 }

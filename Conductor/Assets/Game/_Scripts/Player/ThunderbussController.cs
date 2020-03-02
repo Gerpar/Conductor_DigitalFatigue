@@ -33,6 +33,7 @@ public class ThunderbussController : MonoBehaviour
     private AudioSource src;
     private float currentCharge = 0;
     private bool chargeSoundPlayed = false;
+    private bool inWater = false;
 
     // Start is called before the first frame update
     void Start()
@@ -72,21 +73,30 @@ public class ThunderbussController : MonoBehaviour
 
     void Charging()
     {
+        if(!inWater)
+        {
         currentCharge += Time.deltaTime; // Add deltatime to time charged
 
-        crosshairCharging.fillAmount = currentCharge / chargeTime;  // Update UI
-
-        if(currentCharge >= chargeTime && !chargeSoundPlayed)   // If weapon is fully charged
-        {
-            src.PlayOneShot(chargeSound);   // Play sound
-            chargeSoundPlayed = true;       // Stop sound from playing multiple times
-            chargeTrail.GetComponent<TrailRenderer>().emitting = true;    // Set the trail to be active
+            if (currentCharge >= chargeTime && !chargeSoundPlayed)   // If weapon is fully charged
+            {
+                src.PlayOneShot(chargeSound);   // Play sound
+                chargeSoundPlayed = true;       // Stop sound from playing multiple times
+                chargeTrail.GetComponent<TrailRenderer>().emitting = true;    // Set the trail to be active
+            }
         }
+        else
+        {
+            currentCharge = 0;
+            chargeSoundPlayed = false;
+            chargeTrail.GetComponent<TrailRenderer>().emitting = false;
+        }
+
+        crosshairCharging.fillAmount = currentCharge / chargeTime;  // Update UI
     }
 
     void Firing()
     {
-        if(currentCharge >= chargeTime)
+        if (currentCharge >= chargeTime && !inWater)
         {
             GameObject newOrb = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);  // Instantiate new orb at firepoint position going forwards
             src.PlayOneShot(fireSound); // Play sound
@@ -95,5 +105,21 @@ public class ThunderbussController : MonoBehaviour
         }
         currentCharge = 0;  // Reset charge
         crosshairCharging.fillAmount = 0;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Water"))
+        {
+            inWater = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Water"))
+        {
+            inWater = false;
+        }
     }
 }
