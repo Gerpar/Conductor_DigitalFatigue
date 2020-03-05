@@ -8538,7 +8538,7 @@ FixedJoint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580444741}
-  m_ConnectedBody: {fileID: 1382642903}
+  m_ConnectedBody: {fileID: 1584326844}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_EnableCollision: 0
@@ -23344,12 +23344,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8298728953029355288, guid: 1de87b63af74aba4aa95db3d179b7bc6,
     type: 3}
   m_PrefabInstance: {fileID: 1910833905}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &1382642903 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 2614768251156140850, guid: 2db2d08446ab4b5408b1e6fd236acce3,
-    type: 3}
-  m_PrefabInstance: {fileID: 547797910}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1392800740 stripped
 GameObject:
