@@ -923,6 +923,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Turret_Aiming
       objectReference: {fileID: 0}
+    - target: {fileID: 4289249991774636662, guid: 542e5920637ac3f449b83b464206745d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4289249991774636664, guid: 542e5920637ac3f449b83b464206745d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28199,7 +28204,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693411546}
-  m_Text: (Right Mouse Button to reload level)
+  m_Text: (Hold R Button to reload level)
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -38958,11 +38963,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 948214383}
     m_Modifications:
-    - target: {fileID: 2219220055152118893, guid: 585ec307c8b906f4f8bbae29d59b4b3d,
-        type: 3}
-      propertyPath: m_Name
-      value: Wood
-      objectReference: {fileID: 0}
     - target: {fileID: 2219220055152118892, guid: 585ec307c8b906f4f8bbae29d59b4b3d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39032,6 +39032,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 3.0398
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219220055152118893, guid: 585ec307c8b906f4f8bbae29d59b4b3d,
+        type: 3}
+      propertyPath: m_Name
+      value: Wood
       objectReference: {fileID: 0}
     - target: {fileID: 2219220055152118894, guid: 585ec307c8b906f4f8bbae29d59b4b3d,
         type: 3}
@@ -50849,7 +50854,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663467097}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.5, y: 6.22, z: 17.01}
+  m_LocalPosition: {x: -12, y: 6.22, z: 17.01}
   m_LocalScale: {x: 23.280699, y: 7.6845, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -59211,11 +59216,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 795060967}
     m_Modifications:
-    - target: {fileID: 2219220055152118893, guid: 585ec307c8b906f4f8bbae29d59b4b3d,
-        type: 3}
-      propertyPath: m_Name
-      value: HeavyBox (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 2219220055152118892, guid: 585ec307c8b906f4f8bbae29d59b4b3d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -59285,6 +59285,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2219220055152118893, guid: 585ec307c8b906f4f8bbae29d59b4b3d,
+        type: 3}
+      propertyPath: m_Name
+      value: HeavyBox (2)
       objectReference: {fileID: 0}
     - target: {fileID: 2219220055152118894, guid: 585ec307c8b906f4f8bbae29d59b4b3d,
         type: 3}
