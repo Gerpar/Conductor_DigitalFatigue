@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4028994432979941931}
   - component: {fileID: 4028994432979941930}
   - component: {fileID: 4028994432979941932}
+  - component: {fileID: 1827970717273517818}
   m_Layer: 0
   m_Name: BoxConduit
   m_TagString: Untagged
@@ -46,8 +47,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.553461, y: 3.5202875, z: 7.0749717}
-  m_Center: {x: 1.014617, y: 2.2692313, z: 0.5437858}
+  m_Size: {x: 3.553461, y: 1.1993985, z: 7.0749717}
+  m_Center: {x: 1.014617, y: 1.2013643, z: 0.5437858}
 --- !u!54 &4028994432979941931
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -91,6 +92,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e331f5a10e32b7a4abac3517ef79b6b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1827970717273517818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4028994432979941938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1329ba1b60ed6eb48881d6e2a6f133f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectedTags:
+  - Player
+  launchForce: {x: 0, y: 10, z: 0}
+  enabled: 1
 --- !u!1 &7341765105891425355
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,6 +121,7 @@ GameObject:
   - component: {fileID: 677444962956267847}
   - component: {fileID: 1302941210770364861}
   - component: {fileID: 59137056092166498}
+  - component: {fileID: 1554311706348864777}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -863,11 +881,17 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_IsSelectable: 1
-  m_SelectedFaces: 
+  m_SelectedFaces: 04000000
   m_SelectedEdges:
+  - a: 16
+    b: 17
+  - a: 18
+    b: 16
   - a: 17
     b: 19
-  m_SelectedVertices: 1100000013000000
+  - a: 19
+    b: 18
+  m_SelectedVertices: 10000000110000001200000013000000
 --- !u!64 &59137056092166498
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -882,3 +906,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
+--- !u!65 &1554311706348864777
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7341765105891425355}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.0001984, y: 1.2248468, z: 7}
+  m_Center: {x: -1, y: 0.4812541, z: -3.5}
