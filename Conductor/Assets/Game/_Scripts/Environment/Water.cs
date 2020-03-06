@@ -11,8 +11,9 @@ public class Water : MonoBehaviour
 	public bool effectPlayerDrag;						//should the players rigidbody be effected by the drag/angular drag values of the water?
 	public float resistance = 0.4f;						//the drag applied to rigidbodies in the water (but not player)
 	public float angularResistance = 0.2f;				//the angular drag applied to rigidbodies in the water (but not player)
-	
-	private Dictionary<GameObject, float> dragStore = new Dictionary<GameObject, float>();
+    public float speedLimit = 5.0f;
+
+    private Dictionary<GameObject, float> dragStore = new Dictionary<GameObject, float>();
 	private Dictionary<GameObject, float> angularStore = new Dictionary<GameObject, float>();
     private bool changingLevel = false;
 	
@@ -44,11 +45,21 @@ public class Water : MonoBehaviour
             if (other.TryGetComponent(out BaseMatter matter) && matter.IsBuoyant)
             {
                 forceToAdd += Physics.gravity * rigid.mass * -1;
-                forceToAdd += force * ((depth - surface) / (floor - surface));
+                
+                if (rigid.velocity.y < 0)
+                {
+                    forceToAdd += force;
+                }
+                else if (other.transform.position.y < surface)
+                {
+                    forceToAdd += new Vector3(0, rigid.mass * (speedLimit - rigid.velocity.y), 0);
+                }
+
+                // forceToAdd += force * ((other.transform.position.y - surface) / (floor - surface));
             }
             else
             {
-                forceToAdd += (Physics.gravity * rigid.mass * -1) / 2;
+                forceToAdd += (Physics.gravity * rigid.mass * -1) * 0.9f;
             }
 
             rigid.AddForce(forceToAdd, ForceMode.Force);
