@@ -227,7 +227,8 @@ public class ConduitControl : MonoBehaviour
             //--------------------
             case ObjectEffect.EffectType.WATER_LEVEL:
                 WaterLevel level = obj.GetComponent<WaterLevel>();
-                level.waterBody.ChangeWaterLevel(level.waterHeight);
+                level.waterBody.StopAllCoroutines();
+                level.waterBody.StartCoroutine(level.waterBody.ChangeWaterLevel(level.waterHeight));
                 break;
         }
     }

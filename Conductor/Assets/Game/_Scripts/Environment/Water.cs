@@ -6,16 +6,16 @@ using System.Collections.Generic;
 [RequireComponent(typeof(BoxCollider))]
 public class Water : MonoBehaviour 
 {
-	public AudioClip splashSound;						//played when objects enter water
-	public Vector3 force = new Vector3(0, 16.5f, 0);	//pushForce of the water. This is a vector3 so you can have force in any direction, for example a current or river
-	public bool effectPlayerDrag;						//should the players rigidbody be effected by the drag/angular drag values of the water?
-	public float resistance = 0.4f;						//the drag applied to rigidbodies in the water (but not player)
-	public float angularResistance = 0.2f;				//the angular drag applied to rigidbodies in the water (but not player)
-    public float speedLimit = 5.0f;
+	public AudioClip splashSound;						// Played when objects enter water
+	public Vector3 force = new Vector3(0, 16.5f, 0);	// PushForce of the water. This is a vector3 so you can have force in any direction, for example a current or river
+	public bool effectPlayerDrag;						// Should the players rigidbody be effected by the drag/angular drag values of the water?
+	public float resistance = 0.4f;						// The drag applied to rigidbodies in the water (but not player)
+	public float angularResistance = 0.2f;				// The angular drag applied to rigidbodies in the water (but not player)
+    public float floatSpeed = 5.0f;                     // The maximum speed objects can move when being buoyed upward in this body of water
+    public float waterSpeed = 1.0f;                     // The speed the water travels when it is changing level
 
     private Dictionary<GameObject, float> dragStore = new Dictionary<GameObject, float>();
 	private Dictionary<GameObject, float> angularStore = new Dictionary<GameObject, float>();
-    private bool changingLevel = false;
 	
 	void Awake()
 	{
@@ -32,49 +32,37 @@ public class Water : MonoBehaviour
         collide.size = new Vector3(1, 1, 1);
 	}
 	
-	//apply buoyancy
+	// Apply buoyancy
 	void OnTriggerStay(Collider other)
 	{
 		if(other.tag != "Player" && other.TryGetComponent(out Rigidbody rigid))
 		{
-            float surface = transform.position.y + GetComponent<Collider>().bounds.extents.y; // get surface position
-            float floor = transform.position.y - GetComponent<Collider>().bounds.extents.y;
-            float depth = surface - other.transform.position.y; // get object depth
-            Vector3 forceToAdd = Vector3.zero;
+            float surface = transform.position.y + GetComponent<Collider>().bounds.extents.y;   // Position of the water's surface
+            Vector3 forceToAdd = Vector3.zero;                                                  // How much force will be applied to the object
 
+            // If the object is buoyant, then it will be pushed upward until it reaches the water's surface
             if (other.TryGetComponent(out BaseMatter matter) && matter.IsBuoyant)
             {
-                forceToAdd += Physics.gravity * rigid.mass * -1;
+                forceToAdd += Physics.gravity * rigid.mass * -1;    // Counterforce to gravity
                 
+                // If object is moving downward, the full push force is applied against it
                 if (rigid.velocity.y < 0)
                 {
                     forceToAdd += force;
                 }
+                // Once the falling object has come to a stop, force is applied until it reaches the surface
                 else if (other.transform.position.y < surface)
                 {
-                    forceToAdd += new Vector3(0, rigid.mass * (speedLimit - rigid.velocity.y), 0);
+                    forceToAdd += new Vector3(0, rigid.mass * (floatSpeed - rigid.velocity.y), 0); // Gradually accelerates the object until it reaches floatSpeed
                 }
-
-                // forceToAdd += force * ((other.transform.position.y - surface) / (floor - surface));
             }
+            // If the object is not buoyant, then it's descent is slowed
             else
             {
-                forceToAdd += (Physics.gravity * rigid.mass * -1) * 0.9f;
+                forceToAdd += (Physics.gravity * rigid.mass * -1) * 0.9f; // Slows the objects descent to 10% of the force it should be experiencing
             }
 
             rigid.AddForce(forceToAdd, ForceMode.Force);
-
-            // //if below surface, push object
-            // if (depth > 0.4f)
-            //     forceToAdd += force;
-            // //if we are near the surface, add less force, this prevents objects from "jittering" up and down on the surface
-            // else
-            //     forceToAdd += force * (depth * 2);
-            // 
-            // if (other.TryGetComponent(out BaseMatter matter) && matter.IsBuoyant)
-            //     forceToAdd += Physics.gravity * -1;
-            // 
-            // rigid.AddForce(forceToAdd, ForceMode.Force);
         }
 	}
 	
@@ -140,18 +128,50 @@ public class Water : MonoBehaviour
 		}
 	}
 
-    // Raises or lowers the water level to the height of newWaterLevel
-    public void ChangeWaterLevel(float newWaterLevel)
+    // Animates the water rising or lowering to the height of newWaterLevel
+    public IEnumerator ChangeWaterLevel(float newWaterLevel)
     {
-        float waterMin = transform.position.y - gameObject.GetComponent<Renderer>().bounds.extents.y;
+        Renderer waterRenderer = gameObject.GetComponent<Renderer>();
 
-        transform.position = new Vector3(transform.position.x, (newWaterLevel + waterMin) / 2, transform.position.z);
-        transform.localScale= new Vector3(transform.localScale.x, newWaterLevel - waterMin, transform.localScale.z);
+        float currentWaterLevel = transform.position.y + waterRenderer.bounds.extents.y;    // The current position of the water's surface
+        float waterMin = transform.position.y - waterRenderer.bounds.extents.y;             // The position of the sea floor
 
-        // Vector3 newPosition = transform.position;
-        // 
-        // // First moves the entire object to newWaterLevel, then lowers it so only the top of the water is positioned at newWaterLevel
-        // newPosition.y += (newWaterLevel - transform.position.y) - gameObject.GetComponent<Renderer>().bounds.extents.y;
-        // transform.position = newPosition;
+        // Lower the water level
+        if (currentWaterLevel > newWaterLevel)
+        {
+            // Lowers the water level each frame until it has almost surpassed newWaterLevel
+            while(!((currentWaterLevel - (waterSpeed * Time.deltaTime)) <= newWaterLevel))
+            {
+                currentWaterLevel -= (waterSpeed * Time.deltaTime);                                                                 // Lower the water level by a factor of deltaTime
+                transform.position = new Vector3(transform.position.x, (currentWaterLevel + waterMin) / 2, transform.position.z);   // Repositions the body of water in preparation to be rescaled
+                transform.localScale = new Vector3(transform.localScale.x, currentWaterLevel - waterMin, transform.localScale.z);   // Scales the body of water so that the top of the water
+                                                                                                                                    // reaches currentWaterLevel and the bottom reaches waterMin
+
+                yield return null;
+            }
+
+            // For the final frame, the body of water is repositioned and rescaled so it matches newWaterLevel exactly
+            transform.position = new Vector3(transform.position.x, (newWaterLevel + waterMin) / 2, transform.position.z);
+            transform.localScale = new Vector3(transform.localScale.x, newWaterLevel - waterMin, transform.localScale.z);
+        }
+        // Raise the water level
+        else if (currentWaterLevel < newWaterLevel)
+        {
+            // Raises the water level each frame until it has almost surpassed newWaterLevel
+            while (!((currentWaterLevel + (waterSpeed * Time.deltaTime)) >= newWaterLevel))
+            {
+                currentWaterLevel += (waterSpeed * Time.deltaTime);                                                                 // Raise the water level by a factor of deltaTime
+                transform.position = new Vector3(transform.position.x, (currentWaterLevel + waterMin) / 2, transform.position.z);   // Repositions the body of water in preparation to be rescaled
+                transform.localScale = new Vector3(transform.localScale.x, currentWaterLevel - waterMin, transform.localScale.z);   // Scales the body of water so that the top of the water
+                                                                                                                                    // reaches currentWaterLevel and the bottom reaches waterMin
+
+                yield return null;
+            }
+
+            // For the final frame, the body of water is repositioned and rescaled so it matches newWaterLevel exactly
+            transform.position = new Vector3(transform.position.x, (newWaterLevel + waterMin) / 2, transform.position.z);
+            transform.localScale = new Vector3(transform.localScale.x, newWaterLevel - waterMin, transform.localScale.z);
+        }
+        // If the water is already at newWaterLevel, then nothing is done
     }
 }

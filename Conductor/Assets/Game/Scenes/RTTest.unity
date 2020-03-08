@@ -184,7 +184,8 @@ MonoBehaviour:
   effectPlayerDrag: 0
   resistance: 0.4
   angularResistance: 0.2
-  speedLimit: 10
+  floatSpeed: 5
+  waterSpeed: 1
 --- !u!65 &8099922
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5787,7 +5788,8 @@ MonoBehaviour:
   effectPlayerDrag: 0
   resistance: 0.4
   angularResistance: 0.2
-  speedLimit: 6.5
+  floatSpeed: 5
+  waterSpeed: 5
 --- !u!65 &1477073714
 BoxCollider:
   m_ObjectHideFlags: 0
