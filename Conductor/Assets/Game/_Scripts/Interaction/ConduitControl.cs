@@ -221,7 +221,7 @@ public class ConduitControl : MonoBehaviour
                 obj.GetComponent<Bouncer>().Enabled = conduitEnabled;
                 break;
             case ObjectEffect.EffectType.BOUNCER_INV:
-                obj.GetComponent<Bouncer>().enabled = !conduitEnabled;
+                obj.GetComponent<Bouncer>().Enabled = !conduitEnabled;
                 break;
 
             // TOrrets
@@ -237,7 +237,8 @@ public class ConduitControl : MonoBehaviour
             //--------------------
             case ObjectEffect.EffectType.WATER_LEVEL:
                 WaterLevel level = obj.GetComponent<WaterLevel>();
-                level.waterBody.ChangeWaterLevel(level.waterHeight);
+                level.waterBody.StopAllCoroutines();
+                level.waterBody.StartCoroutine(level.waterBody.ChangeWaterLevel(level.waterHeight));
                 break;
         }
     }
