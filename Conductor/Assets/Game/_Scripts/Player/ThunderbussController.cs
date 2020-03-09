@@ -39,8 +39,8 @@ public class ThunderbussController : MonoBehaviour
     void Start()
     {
         src = firePoint.GetComponent<AudioSource>();
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = false;
+        //Cursor.lockState = CursorLockMode.Confined;
+        //Cursor.visible = false;
         chargeTrail.GetComponent<TrailRenderer>().emitting = false;
     }
 

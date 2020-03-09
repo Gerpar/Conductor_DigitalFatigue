@@ -1855,7 +1855,7 @@ RectTransform:
   - {fileID: 2716012240295134362}
   - {fileID: 6423166086701948545}
   m_Father: {fileID: 8298728953028956280}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -1913,6 +1913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   processVolume: {fileID: 0}
+  mixer: {fileID: 0}
 --- !u!1 &6990530140278726171
 GameObject:
   m_ObjectHideFlags: 0
@@ -2172,8 +2173,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 8298728953029355289}
   - {fileID: 7613385128095860258}
+  - {fileID: 8298728953029355289}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2274,7 +2275,7 @@ RectTransform:
   - {fileID: 1931590498024093029}
   - {fileID: 5621611747537664120}
   m_Father: {fileID: 8298728953028956280}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
