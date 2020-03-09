@@ -151,7 +151,7 @@ MonoBehaviour:
   camX: 0
   camY: 202
   camZ: 0
-  accel: 140
+  accel: 130
   airAccel: 4
   decel: 7.6
   airDecel: 0.5
@@ -161,10 +161,10 @@ MonoBehaviour:
   slopeLimit: 70
   slideAmount: 15
   movingPlatformFriction: 7
-  jumpForce: {x: 0, y: 30, z: 0}
+  jumpForce: {x: 0, y: 31, z: 0}
   secondJumpForce: {x: 0, y: 0, z: 0}
   thirdJumpForce: {x: 0, y: 0, z: 0}
-  swimJumpForce: {x: 0, y: 13, z: 0}
+  swimJumpForce: {x: 0, y: 22, z: 0}
   jumpDelay: 0.1
   jumpLeniancy: 0.2
   onEnemyBounce: 0
@@ -326,7 +326,7 @@ MonoBehaviour:
   chargeTrail: {fileID: 595080055}
   projectilePrefab: {fileID: 2887317920515250608, guid: 314a12f5e33a56b40b503b106b890a83,
     type: 3}
-  chargeTime: 0.8
+  chargeTime: 0.6
   fireSound: {fileID: 8300000, guid: 4eeb24172f9616242ad41015046f7fdb, type: 3}
   chargeSound: {fileID: 8300000, guid: 50a6641f3d9d3564898838f05d715993, type: 3}
 --- !u!114 &6835887347020818601
