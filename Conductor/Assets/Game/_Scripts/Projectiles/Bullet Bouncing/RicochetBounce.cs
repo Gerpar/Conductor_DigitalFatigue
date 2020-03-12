@@ -14,6 +14,14 @@ public class RicochetBounce : MonoBehaviour
         rb = gameObject.GetComponent<Rigidbody>();
     }
 
+    IEnumerator DisableCollider(float time)
+    {
+        GetComponent<Collider>().enabled = false;
+        yield return new WaitForSeconds(time);
+        GetComponent<Collider>().enabled = true;
+        yield return null;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -69,9 +77,12 @@ public class RicochetBounce : MonoBehaviour
                 }
                 else if (hit.normal.x >= 0.5 && hit.normal.y >= 0.5)  // Bot left bouncer
                 {
-                    transform.eulerAngles = new Vector3(-180, absoluteRotationY, 0);    // Go right
+                    transform.eulerAngles = new Vector3(0, absoluteRotationY, 0);    // Go right
                 }
             }
+
+            transform.position = hit.transform.position;
+            StartCoroutine(DisableCollider(0.05f));
 
             rb.velocity = transform.forward * rb.velocity.magnitude;
         }
