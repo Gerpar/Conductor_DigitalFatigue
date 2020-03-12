@@ -206,7 +206,8 @@ AudioSource:
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5113610592304554244, guid: 8f0e2863f4ca227499da39f12af652a6,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -878,7 +879,8 @@ AudioSource:
   m_GameObject: {fileID: 1782860327}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -5113610592304554244, guid: 8f0e2863f4ca227499da39f12af652a6,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -1051,6 +1053,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400002}
     m_Modifications:
+    - target: {fileID: 9500000, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a4e612c5285e58a4492e149f1b9b103b, type: 2}
+    - target: {fileID: 9500000, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100046, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
       propertyPath: m_Name
       value: Liam
@@ -1298,14 +1308,6 @@ PrefabInstance:
     - target: {fileID: 400080, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
       propertyPath: m_RootOrder
       value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: a4e612c5285e58a4492e149f1b9b103b, type: 2}
-    - target: {fileID: 9500000, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100104, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
       propertyPath: m_Layer
