@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 //simple class to add to checkpoint triggers
-[RequireComponent(typeof(CapsuleCollider))]
+[RequireComponent(typeof(BoxCollider))]
 [RequireComponent(typeof(AudioSource))]
 public class Checkpoint : MonoBehaviour 
 {

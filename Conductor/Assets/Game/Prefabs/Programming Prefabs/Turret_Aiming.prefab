@@ -72,5 +72,11 @@ PrefabInstance:
       propertyPath: detectionSound
       value: 
       objectReference: {fileID: 8300000, guid: 50a6641f3d9d3564898838f05d715993, type: 3}
+    - target: {fileID: 5138847700557327611, guid: 3a39e0f570d421e4db51f8e3a1f78ceb,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -5113610592304554244, guid: 8f0e2863f4ca227499da39f12af652a6,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a39e0f570d421e4db51f8e3a1f78ceb, type: 3}
