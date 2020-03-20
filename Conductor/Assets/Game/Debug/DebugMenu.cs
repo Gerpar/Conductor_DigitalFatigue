@@ -26,6 +26,10 @@ public class DebugMenu : MonoBehaviour
     private float shotdelay = 0.8f;
     private float scaleincrement = 0.5f;
     private float jumpincrement = 1.0f;
+    public int lvl1_ID;
+    public int lvl2_ID;
+    public int lvl3_ID;
+    public int lvlSecret_ID;
 
     void Update()
     {
@@ -162,6 +166,13 @@ public class DebugMenu : MonoBehaviour
                 }
             }
 
+            //-----------------------------------------------------------------
+            // DESERT THUNDERBUSS 
+            if (GUI.Button(new Rect(40, 360, 200, 30), "Play Desert Thunderbuss"))
+            {
+                SceneManager.LoadScene("SecretLevel");
+
+            }
         }
     }
 }
