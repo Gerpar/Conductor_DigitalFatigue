@@ -16,13 +16,37 @@ public class Bouncer : MonoBehaviour
 
     void OnCollisionStay(Collision col)
     {
-        if(enabled) // If bouncer is enabled
+        if (enabled) // If bouncer is enabled
         {
             foreach (string tag in effectedTags)    // Check each effected tag
                 if (col.transform.tag == tag)       // If the tag matches one of the effected tags
                 {
-                    Debug.Log(col.gameObject.name);
-                    col.gameObject.GetComponent<Rigidbody>().velocity = launchForce;     // Launch based on the launch force
+                    Vector3 rbVel = col.gameObject.GetComponent<Rigidbody>().velocity;
+                    Vector3 newVel = new Vector3(rbVel.x + launchForce.x, launchForce.y, rbVel.z + launchForce.z);
+                    col.gameObject.GetComponent<Rigidbody>().velocity = newVel;     // Launch based on the launch force
+
+                }
+        }
+        else if (col.transform.CompareTag("Player"))
+        {
+            col.gameObject.GetComponent<PlayerMove>().Grounded = true;
+        }
+    }
+
+    private void OnTriggerStay(Collider col)
+    {
+        if (enabled) // If bouncer is enabled
+        {
+            foreach (string tag in effectedTags)    // Check each effected tag
+                if (col.transform.tag == tag)       // If the tag matches one of the effected tags
+                {
+                    Vector3 rbVel = col.gameObject.GetComponent<Rigidbody>().velocity;
+                    Vector3 newVel = new Vector3(rbVel.x + launchForce.x, launchForce.y, rbVel.z + launchForce.z);
+                    col.gameObject.GetComponent<Rigidbody>().velocity = newVel;     // Launch based on the launch force
+                    if (col.transform.CompareTag("Player"))
+                    {
+                        col.gameObject.GetComponent<PlayerMove>().Grounded = false;
+                    }
                 }
         }
     }
