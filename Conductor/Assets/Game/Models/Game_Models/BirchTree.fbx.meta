@@ -8,17 +8,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 'Material #26'
-    second: {fileID: 2100000, guid: 978a790e4af9ffb4aaae0994a49920c9, type: 2}
+    second: {fileID: 2100000, guid: 422d2b28a67ef9b4e87b2aaa7fe00d34, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 'Material #27'
-    second: {fileID: 2100000, guid: 978a790e4af9ffb4aaae0994a49920c9, type: 2}
+    second: {fileID: 2100000, guid: 422d2b28a67ef9b4e87b2aaa7fe00d34, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: 'Material #50'
-    second: {fileID: 2100000, guid: ea3336176cffc1042842f4e45e9c228c, type: 2}
+    second: {fileID: 2100000, guid: f5f099bc945adf941a5c60695c059fe5, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
