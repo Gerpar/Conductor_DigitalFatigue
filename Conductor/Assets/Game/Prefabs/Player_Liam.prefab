@@ -149,16 +149,16 @@ MonoBehaviour:
   jumpSound: {fileID: 8300000, guid: 21c63e02789d4ab40b3a57280193bd32, type: 3}
   landSound: {fileID: 8300000, guid: 857ac2f7dc8de0c4389c33422e72fc95, type: 3}
   camX: 0
-  camY: -101
+  camY: 202
   camZ: 0
   accel: 130
-  airAccel: 50
+  airAccel: 4
   decel: 7.6
-  airDecel: 7
+  airDecel: 0.5
   rotateSpeed: 3
-  airRotateSpeed: 1.89
-  maxSpeed: 40
-  slopeLimit: 80
+  airRotateSpeed: 0.66
+  maxSpeed: 35
+  slopeLimit: 70
   slideAmount: 15
   movingPlatformFriction: 7
   jumpForce: {x: 0, y: 31, z: 0}
@@ -327,7 +327,7 @@ MonoBehaviour:
   chargeTrail: {fileID: 595080055}
   projectilePrefab: {fileID: 2887317920515250608, guid: 314a12f5e33a56b40b503b106b890a83,
     type: 3}
-  chargeTime: 0.5
+  chargeTime: 0.6
   fireSound: {fileID: 8300000, guid: 4eeb24172f9616242ad41015046f7fdb, type: 3}
   chargeSound: {fileID: 8300000, guid: 50a6641f3d9d3564898838f05d715993, type: 3}
 --- !u!114 &6835887347020818601
@@ -348,10 +348,6 @@ MonoBehaviour:
   ImpactJobel: {fileID: 8300000, guid: 9160f989dab558e48886886661410a64, type: 3}
   JumpJobel: {fileID: 8300000, guid: 08a4653ac212e2042acd5fcc05837c00, type: 3}
   DeathJobel: {fileID: 8300000, guid: fc977a84c2c0449459da27c25af0d926, type: 3}
-  lvl1_ID: 0
-  lvl2_ID: 0
-  lvl3_ID: 0
-  lvlSecret_ID: 0
 --- !u!114 &99917393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,8 +362,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resetTime: 3
   resetCrosshair: {fileID: 0}
-  orderedPuzzleObjectPrefabs: []
-  orderedPuzzleObjectsInScene: []
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,6 +1053,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 400002}
     m_Modifications:
+    - target: {fileID: 9500000, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a4e612c5285e58a4492e149f1b9b103b, type: 2}
+    - target: {fileID: 9500000, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100046, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
       propertyPath: m_Name
       value: Liam
@@ -1306,14 +1308,6 @@ PrefabInstance:
     - target: {fileID: 400080, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
       propertyPath: m_RootOrder
       value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: a4e612c5285e58a4492e149f1b9b103b, type: 2}
-    - target: {fileID: 9500000, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100104, guid: 2aa49f5484494544aab36119827b19bc, type: 3}
       propertyPath: m_Layer

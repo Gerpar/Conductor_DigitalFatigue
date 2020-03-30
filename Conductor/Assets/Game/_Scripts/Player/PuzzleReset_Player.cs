@@ -8,13 +8,12 @@ public class PuzzleReset_Player : MonoBehaviour
 {
     [SerializeField] float resetTime; // How long the button needs to be held
     [SerializeField] Image resetCrosshair;
-    [Header("Puzzle reloading")]
-    [SerializeField] GameObject[] orderedPuzzleObjectPrefabs;
-    [SerializeField] GameObject[] orderedPuzzleObjectsInScene;
 
     float resetTimer = 0;
-    int currentPuzzleID = 0;
 
+    // Start is called before the first frame update
+
+    // Update is called once per frame
     void Update()
     {
         if(Input.GetButton("Reset"))    // Reset button held
@@ -31,20 +30,7 @@ public class PuzzleReset_Player : MonoBehaviour
         resetCrosshair.fillAmount = resetTimer / resetTime;
         if (resetTimer >= resetTime)
         {
-            ReloadCurrentPuzzle();
-            resetTimer = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-    }
-
-    public void SetPuzzleID(int newPuzzleID)
-    {
-        currentPuzzleID = newPuzzleID;
-    }
-
-    public void ReloadCurrentPuzzle()
-    {
-        Destroy(orderedPuzzleObjectsInScene[currentPuzzleID]);  // Destroy the old puzzle
-        orderedPuzzleObjectsInScene[currentPuzzleID] = Instantiate(orderedPuzzleObjectPrefabs[currentPuzzleID], null, true);   // Instantiate new object into the old position
-        GetComponent<Health>().currentHealth = 0;   // Kill player
     }
 }

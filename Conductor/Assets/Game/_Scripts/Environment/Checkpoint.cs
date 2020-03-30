@@ -7,7 +7,6 @@ public class Checkpoint : MonoBehaviour
 {
 	public Color activeColor = Color.green;	//color when checkpoint is activated
 	public float activeColorOpacity = 0.4f;	//opacity when checkpoint is activated
-    public int linkedPuzzleID;
 	
 	private Health health;
 	private Color defColor;
@@ -48,7 +47,6 @@ public class Checkpoint : MonoBehaviour
 		{
 			//set respawn position in players health script
 			health.respawnPos = transform.position;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PuzzleReset_Player>().SetPuzzleID(linkedPuzzleID);
 			
 			//toggle checkpoints
 			if(render.material.color != activeColor)

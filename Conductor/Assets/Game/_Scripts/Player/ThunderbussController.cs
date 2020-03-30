@@ -47,11 +47,9 @@ public class ThunderbussController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!(PauseMenu.isGamePaused))
-        {
-            GetMousePosInWorld();
-            thunderbussHolderTransform.LookAt(mousePosInWorld); // Aim thunderbuss at mouse position
-        }
+        GetMousePosInWorld();
+
+        thunderbussHolderTransform.LookAt(mousePosInWorld); // Aim thunderbuss at mouse position
 
         if (Input.GetButton("Fire"))
         {
