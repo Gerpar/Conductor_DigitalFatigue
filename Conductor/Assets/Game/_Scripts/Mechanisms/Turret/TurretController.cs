@@ -29,7 +29,7 @@ public class TurretController : MonoBehaviour
     AudioSource src;
     bool coroutineStarted = false;
 
-    void Awake()
+    void Start()
     {
         playerObj = GameObject.FindGameObjectWithTag("Player"); // Find the player object
         src = GetComponent<AudioSource>();                      // Get audio source
