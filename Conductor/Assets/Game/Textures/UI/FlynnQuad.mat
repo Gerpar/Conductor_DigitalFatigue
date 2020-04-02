@@ -7,15 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD:Conductor/Assets/Game/Textures/UI/FlynnQuad.mat
   m_Name: FlynnQuad
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHATEST_ON _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
-=======
-  m_Name: Hat_Mat
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
->>>>>>> Art-Branch:Conductor/Assets/Game/Models/Liam/Art/Materials/Hat_Mat.mat
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -47,11 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-<<<<<<< HEAD:Conductor/Assets/Game/Textures/UI/FlynnQuad.mat
         m_Texture: {fileID: 2800000, guid: 8e3bb7d6068c822438d20c5d547da228, type: 3}
-=======
-        m_Texture: {fileID: 2800000, guid: 8f005c77c9c71554ebf390a1b4258536, type: 3}
->>>>>>> Art-Branch:Conductor/Assets/Game/Models/Liam/Art/Materials/Hat_Mat.mat
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -71,19 +61,11 @@ Material:
     - _Cutoff: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-<<<<<<< HEAD:Conductor/Assets/Game/Textures/UI/FlynnQuad.mat
     - _GlossMapScale: 0.46
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 1
-=======
-    - _GlossMapScale: 1
-    - _Glossiness: 0.387
-    - _GlossyReflections: 1
-    - _Metallic: 0.152
-    - _Mode: 0
->>>>>>> Art-Branch:Conductor/Assets/Game/Models/Liam/Art/Materials/Hat_Mat.mat
     - _OcclusionStrength: 1
     - _Parallax: 0.014
     - _SmoothnessTextureChannel: 0
