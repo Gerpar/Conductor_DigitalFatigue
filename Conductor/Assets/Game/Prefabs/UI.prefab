@@ -91,7 +91,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8489413375963956135}
         m_MethodName: UpdateBloom
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -717,7 +717,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 9036386410637619821}
   m_HandleRect: {fileID: 3162092707443314769}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.00001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
@@ -726,7 +726,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8489413375963956135}
         m_MethodName: UpdateEffectsVolume
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -899,7 +899,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 8315256478757921377}
   m_HandleRect: {fileID: 7028302699215617753}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.00001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
@@ -908,7 +908,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8489413375963956135}
         m_MethodName: UpdateMusicVolume
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2021,7 +2021,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 2549815682923181062}
   m_HandleRect: {fileID: 3747145455536576796}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.00001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 1
@@ -2030,7 +2030,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8489413375963956135}
         m_MethodName: UpdateMasterVolume
-        m_Mode: 4
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2504,8 +2504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 8489413376255678365}
   settingsMenu: {fileID: 8482408217934314891}
-  processVolume: {fileID: 2729208247863845106, guid: dd670a89d6a3e064798aff4d75134bf7,
-    type: 3}
+  processVolume: {fileID: 0}
   mixer: {fileID: 24100000, guid: 8f0e2863f4ca227499da39f12af652a6, type: 2}
 --- !u!1 &8489413376255678365
 GameObject:
