@@ -16,7 +16,7 @@ public class Piston : MonoBehaviour
     private bool isMoving = false;
 
     private Vector3 finalPosition, initialPosition;
-    void Awake()
+    void Start()
     {
         finalPosition = extensionObject.transform.position + extensionValue;    // Create a final extension position (Where the piston head will be when fully extended)
         initialPosition = extensionObject.transform.position;                   // Initial position of the piston head (Fully retracted)
@@ -24,9 +24,8 @@ public class Piston : MonoBehaviour
 
     IEnumerator MoveToPosition(Vector3 initialPos, Vector3 newPos, float movespeed)
     {
-        while(Vector3.Distance(extensionObject.transform.position, newPos) > 0.1f)
+        while(Vector3.Distance(extensionObject.transform.position, newPos) > 0.05f)
         {
-            float dist = Vector3.Distance(extensionObject.transform.position, newPos);
             extensionObject.GetComponent<Rigidbody>().MovePosition(Vector3.MoveTowards(extensionObject.transform.position, newPos, pistonMoveSpeed * Time.deltaTime)); // Move towards the end point over time
             yield return null;
         }

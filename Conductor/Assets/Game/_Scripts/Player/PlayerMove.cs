@@ -55,11 +55,6 @@ public class PlayerMove : MonoBehaviour
 	private Rigidbody rigid;
 	private AudioSource aSource;
 
-    public bool Grounded
-    {
-        set { grounded = value; }
-    }
-
 	//setup
 	void Awake()
 	{
