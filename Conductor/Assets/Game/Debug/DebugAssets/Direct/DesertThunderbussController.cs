@@ -140,7 +140,7 @@ public class DesertThunderbussController : MonoBehaviour
 
             if (GUI.Button(new Rect(Screen.width / 2 - 90, Screen.height / 2 + 110, 180, 40), "Quit"))
             {
-
+                SceneManager.LoadScene(0);
             }
         }
 
