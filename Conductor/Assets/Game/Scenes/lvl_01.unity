@@ -1280,6 +1280,16 @@ PrefabInstance:
       propertyPath: resetCrosshair
       value: 
       objectReference: {fileID: 33542840}
+    - target: {fileID: 2632163183192370974, guid: 1a2154dcaab36e04487e4207b0af0a3a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d18eb4a130d32d46b9f13f38caadcf0, type: 2}
+    - target: {fileID: 2918837085142433979, guid: 1a2154dcaab36e04487e4207b0af0a3a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 24929a2f5203dcb4293c1ceec6e9c070, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a2154dcaab36e04487e4207b0af0a3a, type: 3}
 --- !u!1 &276368949
