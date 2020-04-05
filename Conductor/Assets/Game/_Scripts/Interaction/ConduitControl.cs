@@ -25,7 +25,7 @@ public class ConduitControl : MonoBehaviour
         get { return conduitEnabled; }
     }
 
-    void Start()
+    void Awake()
     {
         wireOnMaterial = Resources.Load("Materials/Wiring/WireOn") as Material;
         wireOffMaterial = Resources.Load("Materials/Wiring/WireOff") as Material;
@@ -175,9 +175,33 @@ public class ConduitControl : MonoBehaviour
             //--------------------
             case ObjectEffect.EffectType.WIRE_ON:
                 if (conduitEnabled)  // If conduit is on, turn on wire
-                    obj.GetComponent<Renderer>().material = wireOnMaterial;
+                {
+                    if(obj.GetComponent<Renderer>())
+                    {
+                        obj.GetComponent<Renderer>().material = wireOnMaterial;
+                    }
+                    else
+                    {
+                        foreach(Transform child in obj.transform)
+                        {
+                            child.GetComponent<Renderer>().material = wireOnMaterial;
+                        }
+                    }
+                }
                 else                // If conduit is off, turn off wire
-                    obj.GetComponent<Renderer>().material = wireOffMaterial;
+                {
+                    if (obj.GetComponent<Renderer>())
+                    {
+                        obj.GetComponent<Renderer>().material = wireOffMaterial;
+                    }
+                    else
+                    {
+                        foreach (Transform child in obj.transform)
+                        {
+                            child.GetComponent<Renderer>().material = wireOffMaterial;
+                        }
+                    }
+                }
                 break;
             case ObjectEffect.EffectType.WIRE_OFF:
                 if (conduitEnabled)  // If conduit is on, turn off wire
@@ -224,7 +248,7 @@ public class ConduitControl : MonoBehaviour
                 obj.GetComponent<Bouncer>().Enabled = !conduitEnabled;
                 break;
 
-            // TOrrets
+            // Turrets
             //--------------------
             case ObjectEffect.EffectType.TURRET:
                 obj.GetComponent<TurretController>().TurretState = conduitEnabled;
