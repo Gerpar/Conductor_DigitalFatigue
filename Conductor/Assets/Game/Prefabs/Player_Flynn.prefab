@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 6835887347020818601}
   - component: {fileID: 99917393}
   m_Layer: 8
-  m_Name: Player_Liam
+  m_Name: Player_Flynn
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -348,6 +348,10 @@ MonoBehaviour:
   ImpactJobel: {fileID: 8300000, guid: 9160f989dab558e48886886661410a64, type: 3}
   JumpJobel: {fileID: 8300000, guid: 08a4653ac212e2042acd5fcc05837c00, type: 3}
   DeathJobel: {fileID: 8300000, guid: fc977a84c2c0449459da27c25af0d926, type: 3}
+  lvl1_ID: 0
+  lvl2_ID: 0
+  lvl3_ID: 0
+  lvlSecret_ID: 0
 --- !u!114 &99917393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,6 +366,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resetTime: 3
   resetCrosshair: {fileID: 0}
+  orderedPuzzleObjectPrefabs: []
+  orderedPuzzleObjectsInScene: []
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0
@@ -1989,7 +1995,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2632163183206202990
 Transform:
@@ -2022,7 +2028,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3f0f942e223694c4db6036ffc3ea18eb, type: 2}
+  - {fileID: 2100000, guid: 369aca289f280cb47ba3640626105b47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4138,7 +4144,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c4047a2d28d78df478b91ecd45f7c725, type: 2}
+  - {fileID: 2100000, guid: 969b092620488d54c83b4aaf8b57aa32, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
