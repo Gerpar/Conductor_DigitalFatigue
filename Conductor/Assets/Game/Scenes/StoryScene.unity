@@ -178,7 +178,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: a227e3353c556344e869ec3adc0167c1, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -323,11 +323,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orderedSlideText:
-  - One
-  - Two
-  - Three
-  - Four
-  - Five
+  - In a parallel world, the need for energy is so demanding that they rely on both
+    electricity and steam for power. However, even with both energy sources there
+    isn't enough power to go around.
+  - 'The Queen orders her royal scientist, Professor Flynn Loc, on an expedition to
+    find a lost power source, and hopefully bring it back so they can harness its
+    power and solve the energy crisis. '
+  - With the hope of awakening the technology left on the island, Flynn builds a weapon
+    he calls the Thunderbuss. An arm cannon with the ability to generate and shoot
+    balls of electricity.
+  - 'Equipping the weapon to his lost arm, the Professor leaves London and sets out
+    in search of his destination. '
+  - Little did Flynn know, the power source he searched for was heavily guarded by
+    puzzles and the odds of a safe return home were slim to none...
   orderedSceneImages:
   - {fileID: 21300000, guid: ad173ca94f48d3f4c93ae1759b0b1be4, type: 3}
   - {fileID: 21300000, guid: f5cc1f098b89a3a4c98718932aeb54fb, type: 3}
@@ -516,7 +524,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.9095032, y: 0.017445538}
   m_AnchorMax: {x: 0.97700006, y: 0.20422278}
-  m_AnchoredPosition: {x: -1.1000061, y: 1}
+  m_AnchoredPosition: {x: -1.0999756, y: 1}
   m_SizeDelta: {x: 561, y: 939}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1820451471
