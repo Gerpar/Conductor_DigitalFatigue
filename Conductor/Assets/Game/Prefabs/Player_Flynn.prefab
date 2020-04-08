@@ -152,9 +152,9 @@ MonoBehaviour:
   camY: 202
   camZ: 0
   accel: 130
-  airAccel: 7
+  airAccel: 80
   decel: 7.6
-  airDecel: 0.5
+  airDecel: 7.6
   rotateSpeed: 3
   airRotateSpeed: 1.42
   maxSpeed: 35
@@ -366,8 +366,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resetTime: 3
   resetCrosshair: {fileID: 0}
-  orderedPuzzleObjectPrefabs: []
-  orderedPuzzleObjectsInScene: []
+  orderedPuzzleObjectPrefabs:
+  - {fileID: 3000584951515547062, guid: d33b691961ddee143aae52118c2c8a73, type: 3}
+  - {fileID: 8914999084643941262, guid: c723c7b3e5a408648bced2db758d0cb7, type: 3}
+  - {fileID: 6378136434274927340, guid: dbe28b4434eb3934181d00e53665eb70, type: 3}
+  - {fileID: 430864397415544289, guid: 271a6fbd53ce9c54aba2b42f10051b73, type: 3}
+  orderedPuzzleObjectsInScene:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0
@@ -2028,7 +2036,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 369aca289f280cb47ba3640626105b47, type: 2}
+  - {fileID: 2100000, guid: 7d18eb4a130d32d46b9f13f38caadcf0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4144,7 +4152,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 969b092620488d54c83b4aaf8b57aa32, type: 2}
+  - {fileID: 2100000, guid: 24929a2f5203dcb4293c1ceec6e9c070, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

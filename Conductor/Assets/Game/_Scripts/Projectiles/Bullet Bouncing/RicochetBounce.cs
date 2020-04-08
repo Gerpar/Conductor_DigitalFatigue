@@ -6,6 +6,8 @@ public class RicochetBounce : MonoBehaviour
 {
     [SerializeField] LayerMask collisionMask;
     [SerializeField] GameObject collisionParticles;
+    bool goingTowardsBouncer = false;
+    Vector3 bouncePos;
 
     Rigidbody rb;
     // Start is called before the first frame update
@@ -32,6 +34,7 @@ public class RicochetBounce : MonoBehaviour
         {
             Debug.Log("Ray Direction: " + ray.direction);
             Debug.Log("Hit Normal:    " + hit.normal.x);
+            bouncePos = hit.transform.position;
 
             float rotationVal = transform.eulerAngles.y;
             float absoluteRotationY = rotationVal == 270 ? 90 : rotationVal;    // Make sure that the bouncer workes regardles of what direction the player was facing.
@@ -67,6 +70,7 @@ public class RicochetBounce : MonoBehaviour
                 else if (hit.normal.x >= 0.5 && hit.normal.y <= 0.5)  // Top left bouncer
                 {
                     transform.eulerAngles = new Vector3(0, absoluteRotationY, 0);    // Go right
+                    Debug.Log("Went right.");
                 }
             }
             else if (ray.direction.y < -0.5) // Going down
@@ -81,7 +85,7 @@ public class RicochetBounce : MonoBehaviour
                 }
             }
 
-            transform.position = hit.transform.position;
+            transform.position = hit.transform.position - (GetComponent<Rigidbody>().velocity * Time.deltaTime);
             StartCoroutine(DisableCollider(0.05f));
 
             rb.velocity = transform.forward * rb.velocity.magnitude;
