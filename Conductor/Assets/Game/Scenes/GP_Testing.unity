@@ -25678,6 +25678,11 @@ PrefabInstance:
       propertyPath: settingsMenu
       value: 
       objectReference: {fileID: 1140416932}
+    - target: {fileID: 8489413375963956135, guid: 830fab04f66281d4fb97141f464824e6,
+        type: 3}
+      propertyPath: crosshairObject
+      value: 
+      objectReference: {fileID: 454194945}
     - target: {fileID: 4090742196133915364, guid: 830fab04f66281d4fb97141f464824e6,
         type: 3}
       propertyPath: m_AnchorMax.y

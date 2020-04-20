@@ -21,6 +21,8 @@ public class PauseMenu : MonoBehaviour
     private PostProcessVolume processVolume;
     [SerializeField]
     private AudioMixer mixer;
+    [SerializeField]
+    private GameObject crosshairObject;
 
     private Bloom bloom = null;
     private static bool gamePaused = false;
@@ -50,20 +52,30 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    // Robert Thomas
+    // Robert Thomas & Gerad Paris
     public void PauseGame()
     {
+        // Robert
         gamePaused = true;
         pauseMenu.SetActive(true);
         Time.timeScale = 0.0f;
+        // Gerad
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        crosshairObject.SetActive(false);
     }
 
-    // Robert Thomas
+    // Robert Thomas & Gerad Paris
     public void ResumeGame()
     {
+        // Robert
         gamePaused = false;
         pauseMenu.SetActive(false);
         Time.timeScale = 1.0f;
+        // Gerad
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
+        crosshairObject.SetActive(true);
     }
 
     // Robert Thomas & Gerad Paris
