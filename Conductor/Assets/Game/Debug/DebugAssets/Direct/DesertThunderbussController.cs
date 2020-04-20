@@ -46,6 +46,8 @@ public class DesertThunderbussController : MonoBehaviour
         youLose.SetActive(false);
         youWin.SetActive(false);
         titleScreen.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     // Update is called once per frame
@@ -115,6 +117,8 @@ public class DesertThunderbussController : MonoBehaviour
         {
             StopCoroutine(Driving());
             gameState = (int)eGameState.LOSE;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
 
         // if you win
@@ -122,6 +126,8 @@ public class DesertThunderbussController : MonoBehaviour
         {
             gameState = (int)eGameState.WIN;
             StopCoroutine(Driving());
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 
@@ -135,6 +141,8 @@ public class DesertThunderbussController : MonoBehaviour
             {
                 gameState = (int)eGameState.PLAYING;
                 titleScreen.SetActive(false);
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Confined;
                 StartCoroutine(Driving());
             }
 

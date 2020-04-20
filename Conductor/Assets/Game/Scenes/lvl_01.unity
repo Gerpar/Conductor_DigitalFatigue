@@ -2623,6 +2623,11 @@ PrefabInstance:
       propertyPath: settingsMenu
       value: 
       objectReference: {fileID: 408596588}
+    - target: {fileID: 8489413375963956135, guid: 830fab04f66281d4fb97141f464824e6,
+        type: 3}
+      propertyPath: crosshairObject
+      value: 
+      objectReference: {fileID: 25691086}
     - target: {fileID: 4090742196133915364, guid: 830fab04f66281d4fb97141f464824e6,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2708,6 +2713,17 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5465766461686140523, guid: 830fab04f66281d4fb97141f464824e6,
+        type: 3}
+      propertyPath: processVolume
+      value: 
+      objectReference: {fileID: 525764099}
+    - target: {fileID: 5465766461686140523, guid: 830fab04f66281d4fb97141f464824e6,
+        type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 8f0e2863f4ca227499da39f12af652a6,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 830fab04f66281d4fb97141f464824e6, type: 3}
 --- !u!1 &408596588 stripped
@@ -23039,7 +23055,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-319286
+  m_Name: pb_Mesh-788702
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -56411,6 +56427,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 977448293}
+    - target: {fileID: 5255603490039674866, guid: c723c7b3e5a408648bced2db758d0cb7,
+        type: 3}
+      propertyPath: effectedObjects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7310521483767173169, guid: c723c7b3e5a408648bced2db758d0cb7,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

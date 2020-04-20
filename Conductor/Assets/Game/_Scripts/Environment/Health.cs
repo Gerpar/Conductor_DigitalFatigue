@@ -31,6 +31,7 @@ public class Health : MonoBehaviour
 	private Throwing throwing;
 	private Renderer flashRender;
 	private AudioSource aSource;
+    private PuzzleReset_Player resetScript;
 	
 	//setup
 	void Awake()
@@ -45,6 +46,10 @@ public class Health : MonoBehaviour
 		originalColor = flashRender.material.color;
 		defHealth = currentHealth;
 		respawnPos = transform.position;
+        if(tag == "Player")
+        {
+            resetScript = GetComponent<PuzzleReset_Player>();
+        }
 	}
 	
 	//detecting damage and dying
@@ -93,7 +98,10 @@ public class Health : MonoBehaviour
 	{
 		//player drop item
 		if(tag == "Player")
-			throwing = GetComponent<Throwing>();
+        {
+            throwing = GetComponent<Throwing>();
+            resetScript.ReloadCurrentPuzzle();
+        }
 		if(throwing && throwing.heldObj && throwing.heldObj.tag == "Pickup")
 			throwing.ThrowPickup();
 		
