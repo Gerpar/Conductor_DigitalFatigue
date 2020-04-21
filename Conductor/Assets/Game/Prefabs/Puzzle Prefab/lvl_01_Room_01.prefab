@@ -113,7 +113,7 @@ PrefabInstance:
     - target: {fileID: 674162085577302231, guid: 3f1268868425dec468f4e52092132f80,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.41
+      value: -2.14
       objectReference: {fileID: 0}
     - target: {fileID: 674162085577302231, guid: 3f1268868425dec468f4e52092132f80,
         type: 3}
@@ -372,11 +372,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2614768249441738173, guid: 2db2d08446ab4b5408b1e6fd236acce3,
-        type: 3}
-      propertyPath: extensionValue.y
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 2614768249441738144, guid: 2db2d08446ab4b5408b1e6fd236acce3,
         type: 3}
       propertyPath: m_Mesh
@@ -386,6 +381,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614768249441738173, guid: 2db2d08446ab4b5408b1e6fd236acce3,
+        type: 3}
+      propertyPath: extensionValue.y
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2db2d08446ab4b5408b1e6fd236acce3, type: 3}
@@ -654,11 +654,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2614768249441738173, guid: 2db2d08446ab4b5408b1e6fd236acce3,
-        type: 3}
-      propertyPath: extensionValue.y
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 2614768249441738144, guid: 2db2d08446ab4b5408b1e6fd236acce3,
         type: 3}
       propertyPath: m_Mesh
@@ -668,6 +663,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614768249441738173, guid: 2db2d08446ab4b5408b1e6fd236acce3,
+        type: 3}
+      propertyPath: extensionValue.y
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2db2d08446ab4b5408b1e6fd236acce3, type: 3}
@@ -750,15 +750,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2614768249441738173, guid: 2db2d08446ab4b5408b1e6fd236acce3,
-        type: 3}
-      propertyPath: extensionValue.y
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 2614768249441738144, guid: 2db2d08446ab4b5408b1e6fd236acce3,
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614768251156140851, guid: 2db2d08446ab4b5408b1e6fd236acce3,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614768249441738173, guid: 2db2d08446ab4b5408b1e6fd236acce3,
+        type: 3}
+      propertyPath: extensionValue.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2614768249441738150, guid: 2db2d08446ab4b5408b1e6fd236acce3,
         type: 3}
@@ -839,11 +844,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SelectedVertices.Array.data[3]
       value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2614768251156140851, guid: 2db2d08446ab4b5408b1e6fd236acce3,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2db2d08446ab4b5408b1e6fd236acce3, type: 3}
@@ -1439,11 +1439,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3000584951515547063}
     m_Modifications:
-    - target: {fileID: 512788921116061676, guid: 18320be8f7f266a40bb4ef0125ddba89,
-        type: 3}
-      propertyPath: m_Name
-      value: Wires for door 2
-      objectReference: {fileID: 0}
     - target: {fileID: 512788921116061677, guid: 18320be8f7f266a40bb4ef0125ddba89,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1498,6 +1493,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 512788921116061676, guid: 18320be8f7f266a40bb4ef0125ddba89,
+        type: 3}
+      propertyPath: m_Name
+      value: Wires for door 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18320be8f7f266a40bb4ef0125ddba89, type: 3}
