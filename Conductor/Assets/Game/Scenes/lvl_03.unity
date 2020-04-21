@@ -17997,11 +17997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 91fd7ffbdf8449a419e1f52cead56924, type: 3}
       propertyPath: nextLevelIndex
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: 91fd7ffbdf8449a419e1f52cead56924, type: 3}
-      propertyPath: loadDelay
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 91fd7ffbdf8449a419e1f52cead56924, type: 3}
