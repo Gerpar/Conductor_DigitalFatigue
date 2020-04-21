@@ -246,10 +246,10 @@ RectTransform:
   m_Father: {fileID: 1752005561}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 51.799988, y: 69.3}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0.027500002, y: 0.084444456}
+  m_AnchorMax: {x: 0.105000004, y: 0.22444443}
+  m_AnchoredPosition: {x: -1.2000122, y: -0.19999695}
+  m_SizeDelta: {x: 38, y: 37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &179948534
 MonoBehaviour:
@@ -364,37 +364,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1752005561}
     m_Modifications:
-    - target: {fileID: -4138320589482943943, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: mixer
-      value: 
-      objectReference: {fileID: 24100000, guid: 8f0e2863f4ca227499da39f12af652a6,
-        type: 2}
-    - target: {fileID: -4138320589482943943, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: processVolume
-      value: 
-      objectReference: {fileID: 1587804793}
-    - target: {fileID: -4138320589482943943, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: masterVolSlider
-      value: 
-      objectReference: {fileID: 229765988}
-    - target: {fileID: -4138320589482943943, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: musicVolSlider
-      value: 
-      objectReference: {fileID: 444508150}
-    - target: {fileID: -4138320589482943943, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: effectsVolSlider
-      value: 
-      objectReference: {fileID: 2065717388}
-    - target: {fileID: -4138320589482943943, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: bloomVisSlider
-      value: 
-      objectReference: {fileID: 477589801}
     - target: {fileID: 8717956983404161497, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
         type: 3}
       propertyPath: m_Name
@@ -404,6 +373,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3542591733500235125, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1939169079}
+    - target: {fileID: 3542591733500235125, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateEffectsVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 3570190859294733400, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1939169079}
+    - target: {fileID: 3570190859294733400, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateMusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 5395993163122187125, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1939169079}
+    - target: {fileID: 5395993163122187125, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateMasterVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6428323376143033494, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1939169079}
+    - target: {fileID: 6428323376143033494, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UpdateBloom
       objectReference: {fileID: 0}
     - target: {fileID: 7224509101513657430, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
         type: 3}
@@ -525,132 +534,123 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.9089577
       objectReference: {fileID: 0}
-    - target: {fileID: 5395993163122187125, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1939169079}
-    - target: {fileID: 5395993163122187125, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpdateMasterVolume
-      objectReference: {fileID: 0}
-    - target: {fileID: 3326248213232476244, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3326248213232476244, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4128532067277262158, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4128532067277262158, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4128532067277262158, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3570190859294733400, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1939169079}
-    - target: {fileID: 3570190859294733400, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpdateMusicVolume
-      objectReference: {fileID: 0}
-    - target: {fileID: 9092291889025349171, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9092291889025349171, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7836961453856696971, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7836961453856696971, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7836961453856696971, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3542591733500235125, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1939169079}
-    - target: {fileID: 3542591733500235125, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpdateEffectsVolume
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082913954434393663, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8082913954434393663, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2786026582910157827, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2786026582910157827, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2786026582910157827, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 889141224726042517, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
         type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6428323376143033494, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+    - target: {fileID: 3326248213232476244, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
         type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1939169079}
-    - target: {fileID: 6428323376143033494, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3326248213232476244, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
         type: 3}
-      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UpdateBloom
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2662162194730350387, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786026582910157827, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786026582910157827, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786026582910157827, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128532067277262158, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128532067277262158, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128532067277262158, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3859244720780197558, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2662162194730350387, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+    - target: {fileID: -4138320589482943943, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 8f0e2863f4ca227499da39f12af652a6,
+        type: 2}
+    - target: {fileID: -4138320589482943943, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: processVolume
+      value: 
+      objectReference: {fileID: 1587804793}
+    - target: {fileID: -4138320589482943943, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: masterVolSlider
+      value: 
+      objectReference: {fileID: 229765988}
+    - target: {fileID: -4138320589482943943, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: musicVolSlider
+      value: 
+      objectReference: {fileID: 444508150}
+    - target: {fileID: -4138320589482943943, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: effectsVolSlider
+      value: 
+      objectReference: {fileID: 2065717388}
+    - target: {fileID: -4138320589482943943, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: bloomVisSlider
+      value: 
+      objectReference: {fileID: 477589801}
+    - target: {fileID: 7836961453856696971, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836961453856696971, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7836961453856696971, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092291889025349171, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092291889025349171, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082913954434393663, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8082913954434393663, guid: f15eea5cfdc3fbc47b73bb9caa0a519b,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -894,10 +894,10 @@ RectTransform:
   m_Father: {fileID: 1752005561}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.09125, y: 0.5422228}
-  m_AnchorMax: {x: 0.29250002, y: 0.6088911}
-  m_AnchoredPosition: {x: 33, y: -10.9}
-  m_SizeDelta: {x: -0.000045776367, y: -0.0000019073486}
+  m_AnchorMin: {x: 0.13250001, y: 0.5177778}
+  m_AnchorMax: {x: 0.3325, y: 0.58666664}
+  m_AnchoredPosition: {x: 0.5, y: -0.39999962}
+  m_SizeDelta: {x: 0.9999542, y: -1.0000019}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &716040827
 MonoBehaviour:
@@ -1311,10 +1311,10 @@ RectTransform:
   m_Father: {fileID: 1752005561}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.09, y: 0.40877727}
-  m_AnchorMax: {x: 0.29250002, y: 0.47777727}
-  m_AnchoredPosition: {x: 33.499985, y: -10.899994}
-  m_SizeDelta: {x: -1.0000458, y: -1}
+  m_AnchorMin: {x: 0.13250001, y: 0.38655505}
+  m_AnchorMax: {x: 0.3325, y: 0.45555556}
+  m_AnchoredPosition: {x: 0.49998474, y: -0.8999939}
+  m_SizeDelta: {x: 0.9999542, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1053694189
 MonoBehaviour:
@@ -1612,10 +1612,10 @@ RectTransform:
   m_Father: {fileID: 1752005561}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 349, y: -154}
-  m_SizeDelta: {x: 340, y: 420}
+  m_AnchorMin: {x: 0.89624995, y: 0.071111105}
+  m_AnchorMax: {x: 0.97625005, y: 0.24222223}
+  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_SizeDelta: {x: 276, y: 343}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1280998536
 MonoBehaviour:
