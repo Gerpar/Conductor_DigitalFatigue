@@ -248,7 +248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.027500002, y: 0.084444456}
   m_AnchorMax: {x: 0.105000004, y: 0.22444443}
-  m_AnchoredPosition: {x: -1.2000122, y: -0.19999695}
+  m_AnchoredPosition: {x: -1.2000732, y: -0.19998169}
   m_SizeDelta: {x: 38, y: 37}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &179948534
@@ -896,7 +896,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.13250001, y: 0.5177778}
   m_AnchorMax: {x: 0.3325, y: 0.58666664}
-  m_AnchoredPosition: {x: 0.5, y: -0.39999962}
+  m_AnchoredPosition: {x: 0.5, y: -0.40000153}
   m_SizeDelta: {x: 0.9999542, y: -1.0000019}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &716040827
@@ -1209,9 +1209,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840448805}
-  m_Text: 'Created by: Gerad Paris (Programming & Particles & Team Lead), Jenni Rivers
-    (Art & Modeling), Jared Roberge (Design & Programming), Robert Thomas (Programming),
-    Mackenzie St. Thomas (Models).  Music by: Nosoapradio (DST) - CC 3.0'
+  m_Text: 'Music by: Nosoapradio (DST) - 3.0    Team Lead - Gerad Paris    Design
+    - Jared Roberge   Art - Jenni Rivers    Programming - Gerad Paris, Robert Thomas,
+    and Jared Roberge'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -1220,11 +1220,11 @@ TextMesh:
   m_TabSize: 4
   m_FontSize: 48
   m_FontStyle: 1
-  m_RichText: 1
+  m_RichText: 0
   m_Font: {fileID: 12800000, guid: a227e3353c556344e869ec3adc0167c1, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4283806461
+    rgba: 4281311999
 --- !u!23 &840448808
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1313,7 +1313,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.13250001, y: 0.38655505}
   m_AnchorMax: {x: 0.3325, y: 0.45555556}
-  m_AnchoredPosition: {x: 0.49998474, y: -0.8999939}
+  m_AnchoredPosition: {x: 0.5, y: -0.8999939}
   m_SizeDelta: {x: 0.9999542, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1053694189
@@ -2243,7 +2243,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1907256765}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.96, y: 3.91, z: -1.07}
+  m_LocalPosition: {x: -4.82, y: 3.91, z: -1.07}
   m_LocalScale: {x: 5.9644, y: 2.9822, z: 2.9822}
   m_Children: []
   m_Father: {fileID: 0}
