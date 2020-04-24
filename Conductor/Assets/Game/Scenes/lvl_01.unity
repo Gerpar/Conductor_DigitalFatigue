@@ -1367,6 +1367,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1492016979}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 70b698f3ee309574f93665c82e5ad2ca,
+        type: 3}
+      propertyPath: m_Name
+      value: DarkMetal (52)
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 70b698f3ee309574f93665c82e5ad2ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1436,11 +1441,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 5.324519
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 70b698f3ee309574f93665c82e5ad2ca,
-        type: 3}
-      propertyPath: m_Name
-      value: DarkMetal (52)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70b698f3ee309574f93665c82e5ad2ca, type: 3}
@@ -14962,6 +14962,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1164589494}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 70b698f3ee309574f93665c82e5ad2ca,
+        type: 3}
+      propertyPath: m_Name
+      value: DarkMetal (49)
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 70b698f3ee309574f93665c82e5ad2ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15031,11 +15036,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 13.856211
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 70b698f3ee309574f93665c82e5ad2ca,
-        type: 3}
-      propertyPath: m_Name
-      value: DarkMetal (49)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70b698f3ee309574f93665c82e5ad2ca, type: 3}
@@ -15209,6 +15209,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1164589494}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 70b698f3ee309574f93665c82e5ad2ca,
+        type: 3}
+      propertyPath: m_Name
+      value: DarkMetal (20)
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 70b698f3ee309574f93665c82e5ad2ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15278,11 +15283,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 16.47607
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 70b698f3ee309574f93665c82e5ad2ca,
-        type: 3}
-      propertyPath: m_Name
-      value: DarkMetal (20)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70b698f3ee309574f93665c82e5ad2ca, type: 3}
@@ -18575,6 +18575,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1492016979}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 70b698f3ee309574f93665c82e5ad2ca,
+        type: 3}
+      propertyPath: m_Name
+      value: DarkMetal (51)
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 70b698f3ee309574f93665c82e5ad2ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18645,11 +18650,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 5.324519
       objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 70b698f3ee309574f93665c82e5ad2ca,
-        type: 3}
-      propertyPath: m_Name
-      value: DarkMetal (51)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70b698f3ee309574f93665c82e5ad2ca, type: 3}
 --- !u!4 &738660906 stripped
@@ -18704,6 +18704,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1492016979}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 70b698f3ee309574f93665c82e5ad2ca,
+        type: 3}
+      propertyPath: m_Name
+      value: DarkMetal (50)
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 70b698f3ee309574f93665c82e5ad2ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -18773,11 +18778,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 8.37531
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 70b698f3ee309574f93665c82e5ad2ca,
-        type: 3}
-      propertyPath: m_Name
-      value: DarkMetal (50)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70b698f3ee309574f93665c82e5ad2ca, type: 3}
@@ -23214,6 +23214,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 6621913812658466404, guid: 94668817f874839498e51cfb26d18dce,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.69
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94668817f874839498e51cfb26d18dce, type: 3}
@@ -36238,6 +36243,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1164589494}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 70b698f3ee309574f93665c82e5ad2ca,
+        type: 3}
+      propertyPath: m_Name
+      value: DarkMetal (48)
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 70b698f3ee309574f93665c82e5ad2ca,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -36307,11 +36317,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 16.47607
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 70b698f3ee309574f93665c82e5ad2ca,
-        type: 3}
-      propertyPath: m_Name
-      value: DarkMetal (48)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70b698f3ee309574f93665c82e5ad2ca, type: 3}
