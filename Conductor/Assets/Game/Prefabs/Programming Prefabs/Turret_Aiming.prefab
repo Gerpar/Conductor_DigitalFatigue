@@ -72,6 +72,11 @@ PrefabInstance:
       propertyPath: detectionSound
       value: 
       objectReference: {fileID: 8300000, guid: 50a6641f3d9d3564898838f05d715993, type: 3}
+    - target: {fileID: 8586113149665813563, guid: 3a39e0f570d421e4db51f8e3a1f78ceb,
+        type: 3}
+      propertyPath: fireDelay
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 5138847700557327611, guid: 3a39e0f570d421e4db51f8e3a1f78ceb,
         type: 3}
       propertyPath: OutputAudioMixerGroup

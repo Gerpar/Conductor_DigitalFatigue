@@ -193,7 +193,7 @@ MonoBehaviour:
   hitFlashColor: {r: 0.9485294, g: 0.15343855, b: 0.15343855, a: 1}
   flashObject: {fileID: 2632163183206202990}
   spawnOnDeath:
-  - {fileID: 100000, guid: de22137421d24f049b9b87e224ae7a0b, type: 3}
+  - {fileID: 458669253750620094, guid: ef4fac8ae3c53ac4a9f5be656cf44981, type: 3}
   dead: 0
   flashing: 0
   respawnPos: {x: 0, y: 0, z: 0}

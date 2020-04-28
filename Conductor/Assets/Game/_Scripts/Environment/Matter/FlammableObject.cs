@@ -4,12 +4,14 @@ using UnityEngine;
 
 // Robert Thomas
 // This script marks any object it is attached to as flammable, and handles it's destruction once set on fire
+// Slight edit by Gerad Paris to change the parent of children when destroyed
 
 public class FlammableObject : BaseMatter
 {
     public ParticleSystem flame;            // Prefab fire effect that plays while the object is burning 
     [SerializeField]
     protected float timeToDestroy = 0.0f;   // How long it takes for the fire to completely burn away this object
+    [SerializeField] Transform newParent;  // Parent object that the children will be moved to
 
     protected float timeElapsed;    // How much time has elapsed since the object was lit on fire
 
@@ -27,7 +29,17 @@ public class FlammableObject : BaseMatter
             timeElapsed += Time.deltaTime;
 
             if (timeElapsed >= timeToDestroy)
+            {
+                if(newParent)
+                {
+                    foreach (Transform child in transform)
+                    {
+                        child.parent = newParent;
+                    }
+                }
                 Destroy(this.gameObject);
+            }
+                
         }
     }
 

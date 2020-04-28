@@ -20,6 +20,7 @@ public class TurretController : MonoBehaviour
     [SerializeField] bool tracking = false;
     [SerializeField] float rotationSpeed;
     [SerializeField] GameObject detectionZone;
+    [SerializeField] GameObject turretHead;
 
     GameObject playerObj;
     bool turretOnline = false;
@@ -108,6 +109,6 @@ public class TurretController : MonoBehaviour
 
         Quaternion lookRotation = Quaternion.LookRotation(direction);           // Create a quaternion for the new look rotation
 
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);  // SLerp towards the new look position from the current rotation.
+        turretHead.transform.rotation = Quaternion.Slerp(turretHead.transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);  // SLerp towards the new look position from the current rotation.
     }
 }
